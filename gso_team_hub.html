@@ -4,125 +4,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GSO APAC Team Hub 🛠️</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
 :root {
-  --bg: #f5f5f5;
-  --card: #ffffff;
-  --primary: #0a0a0a;
-  --green: #00CC65;
-  --green-d: #009e4f;
-  --green-light: #e6f9f0;
-  --blue: #006aff;
-  --blue-light: #eaf0ff;
-  --orange: #F6A623;
-  --orange-light: #fff8ec;
-  --red: #e11d48;
-  --red-light: #fff0f3;
-  --purple: #7c3aed;
-  --purple-light: #f3f0ff;
-  --teal: #00b4a0;
-  --teal-light: #f0fdfa;
-  --text: #1a1a1a;
-  --text-light: #767676;
-  --border: #e8e8e8;
-  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 0 1px rgba(0,0,0,.06);
-  --radius: 10px;
+  --bg: #F4F5F7;
+  --card: #FFFFFF;
+  --primary: #1A1F36;
+  --green: #00875A;
+  --green-light: #E3FCEF;
+  --blue: #0052CC;
+  --blue-light: #DEEBFF;
+  --orange: #FF8B00;
+  --orange-light: #FFFAE6;
+  --red: #DE350B;
+  --red-light: #FFEBE6;
+  --purple: #6B4FBB;
+  --purple-light: #EAE6FF;
+  --text: #172B4D;
+  --text-light: #5E6C84;
+  --border: #DFE1E6;
+  --shadow: 0 1px 3px rgba(9,30,66,.12), 0 0 1px rgba(9,30,66,.16);
+  --radius: 8px;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); font-size: 18px; line-height: 2.0; }
 
-/* ── TOP BAR (Blockcell style) ── */
-.top-nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  height: 60px;
-  background: var(--primary);
-  display: flex; align-items: center;
-  padding: 0 28px; gap: 14px; z-index: 100;
-  overflow-x: auto; scrollbar-width: none;
-}
+/* NAV */
+
+
+/* HERO */
+.hero { background: linear-gradient(140deg, #1A1F36 0%, #2E3561 60%, #1A4A6B 100%); color: white; padding: 80px 64px 64px; text-align: center; }
+.hero-top { display: flex; justify-content: center; align-items: flex-start; gap: 20px; margin-bottom: 28px; flex-direction: column; align-items: center; }
+.hero-text h1 { font-size: 54px; font-weight: 800; margin-bottom: 14px; line-height: 1.1; }
+.hero-text p { font-size: 20px; opacity: 0.85; max-width: 680px; line-height: 1.7; margin: 0 auto; }
+.hero-badge { background: rgba(0,135,90,0.25); border: 1px solid rgba(0,135,90,0.5); color: #7EFFC1; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; white-space: nowrap; flex-shrink: 0; margin-top: 4px; }
+.top-nav { position: sticky; top: 0; z-index: 100; background: var(--primary); padding: 0 20px; display: flex; align-items: center; height: 52px; gap: 2px; overflow-x: auto; scrollbar-width: none; }
 .top-nav::-webkit-scrollbar { display: none; }
-.nav-brand {
-  display: flex; align-items: center; gap: 8px;
-  text-decoration: none; white-space: nowrap; flex-shrink: 0; margin-right: 4px;
-}
-.nav-brand-mark {
-  width: 30px; height: 30px;
-  background: var(--green); border-radius: 7px;
-  display: flex; align-items: center; justify-content: center;
-}
-.nav-brand-mark svg { width: 18px; height: 18px; fill: var(--primary); }
-.nav-brand-text { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: -0.2px; }
-.nav-divider { width: 1px; height: 18px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
-.nav-sub { font-size: 13px; color: rgba(255,255,255,0.5); white-space: nowrap; flex-shrink: 0; }
-.nav-link {
-  color: rgba(255,255,255,0.6); text-decoration: none;
-  padding: 5px 10px; border-radius: 6px;
-  font-size: 13px; font-weight: 500; white-space: nowrap;
-  transition: all 0.15s; flex-shrink: 0;
-}
-.nav-link:hover { background: rgba(255,255,255,0.1); color: white; }
+.nav-brand { font-weight: 700; font-size: 17px; color: white; text-decoration: none; white-space: nowrap; margin-right: 16px; flex-shrink: 0; }
+.nav-link { color: rgba(255,255,255,0.7); text-decoration: none; padding: 6px 10px; border-radius: 6px; font-size: 14px; white-space: nowrap; transition: all 0.15s; flex-shrink: 0; }
+.nav-link:hover { background: rgba(255,255,255,0.12); color: white; }
+.quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; justify-content: center; }
+.quick-link { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.9); text-decoration: none; padding: 7px 14px; border-radius: 20px; font-size: 14px; font-weight: 500; transition: all 0.15s; display: flex; align-items: center; gap: 5px; }
+.quick-link:hover { background: rgba(255,255,255,0.2); color: white; border-color: rgba(255,255,255,0.35); }
 
-/* ── HERO (Blockcell style) ── */
-.hero {
-  background: var(--primary); color: white;
-  padding: 100px 64px 56px; text-align: center;
-}
-.hero-top { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-bottom: 28px; }
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
-  color: var(--green); background: rgba(0,204,101,0.15);
-  border: 1px solid rgba(0,204,101,0.3); padding: 4px 12px; border-radius: 99px;
-}
-.hero-text h1 { font-size: 42px; font-weight: 800; margin-bottom: 14px; line-height: 1.15; letter-spacing: -1px; }
-.hero-text h1 span { color: var(--green); }
-.hero-text p { font-size: 13px; opacity: 0.75; max-width: 600px; line-height: 1.7; margin: 0 auto; }
-.hero-badge {
-  background: rgba(0,204,101,0.15); border: 1px solid rgba(0,204,101,0.3);
-  color: var(--green); padding: 5px 14px; border-radius: 99px;
-  font-size: 12px; font-weight: 700; white-space: nowrap; letter-spacing: 0.04em;
-}
-.quick-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; justify-content: center; }
-.quick-link {
-  background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.85); text-decoration: none;
-  padding: 6px 14px; border-radius: 99px;
-  font-size: 12.5px; font-weight: 500; transition: all 0.15s;
-  display: flex; align-items: center; gap: 5px;
-}
-.quick-link:hover { background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.3); }
+/* CONTAINER */
+.container { max-width: 1200px; margin: 0 auto; padding: 52px 80px; }
+.section { margin-bottom: 64px; }
+.section-title { font-size: 28px; font-weight: 700; color: var(--primary); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.section-subtitle { font-size: 17px; color: var(--text-light); font-weight: 400; margin-left: 4px; }
 
-/* ── CONTAINER ── */
-.container { max-width: 1100px; margin: 0 auto; padding: 48px 60px 80px; margin-top: 60px; }
-.section { margin-bottom: 56px; }
-.section-title {
-  font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text-light); margin-bottom: 16px;
-  display: flex; align-items: center; gap: 10px;
-}
-.section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-.section-heading { font-size: 14px; font-weight: 800; color: var(--primary); margin-bottom: 6px; letter-spacing: -0.4px; }
-.section-subtitle { font-size: 13.5px; color: var(--text-light); font-weight: 400; margin-bottom: 20px; }
+/* GRID */
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.grid-5 { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
 
-/* ── GRID ── */
-.grid { display: grid; gap: 12px; }
-.grid-2 { grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); }
-.grid-3 { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
-.grid-4 { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-.grid-5 { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+/* CARDS */
+.card { background: var(--card); border-radius: var(--radius); padding: 30px 34px; box-shadow: var(--shadow); }
 
-/* ── CARDS ── */
-.card { background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 20px 22px; }
-.card h4 { font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 7px; }
-.card p { font-size: 14px; color: #4a4a4a; line-height: 1.65; }
-
-/* ── METRIC CARDS ── */
-.metric { background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 22px 20px; border-top: 3px solid var(--green); text-align: center; }
-.metric-num { font-size: 36px; font-weight: 800; color: var(--green); line-height: 1.1; letter-spacing: -1px; }
-.metric-label { font-size: 13px; font-weight: 600; color: var(--text); margin-top: 4px; }
-.metric-sub { font-size: 12px; color: var(--text-light); margin-top: 3px; }
+/* METRIC CARDS */
+.metric { background: var(--card); border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); border-top: 3px solid var(--green); text-align: center; }
+.metric-num { font-size: 40px; font-weight: 800; color: var(--green); line-height: 1.1; }
+.metric-label { font-size: 17px; font-weight: 600; color: var(--text); margin-top: 4px; }
+.metric-sub { font-size: 16px; color: var(--text-light); margin-top: 3px; }
 .metric.blue { border-top-color: var(--blue); }
 .metric.blue .metric-num { color: var(--blue); }
 .metric.orange { border-top-color: var(--orange); }
@@ -130,117 +74,103 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
 .metric.purple { border-top-color: var(--purple); }
 .metric.purple .metric-num { color: var(--purple); }
 
-/* ── DSR PIPELINE ── */
-.pipeline-wrap { background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 20px; overflow-x: auto; }
+/* DSR PIPELINE */
+.pipeline-wrap { background: var(--card); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); overflow-x: auto; }
 .pipeline { display: flex; align-items: flex-start; gap: 6px; min-width: 700px; }
 .pipe-step { flex: 1; text-align: center; }
-.pipe-arrow { font-size: 13px; color: var(--border); margin-top: 10px; flex-shrink: 0; align-self: flex-start; }
-.pipe-badge { border-radius: 99px; padding: 4px 10px; font-size: 10px; font-weight: 700; display: inline-block; margin-bottom: 5px; line-height: 1.3; }
+.pipe-arrow { font-size: 18px; color: var(--border); margin-top: 10px; flex-shrink: 0; align-self: flex-start; }
+.pipe-badge { border-radius: 16px; padding: 5px 10px; font-size: 10px; font-weight: 700; display: inline-block; margin-bottom: 5px; line-height: 1.3; }
 .pipe-badge.blue { background: var(--blue-light); color: var(--blue); }
-.pipe-badge.green { background: var(--green-light); color: var(--green-d); }
+.pipe-badge.green { background: var(--green-light); color: var(--green); }
 .pipe-badge.orange { background: var(--orange-light); color: var(--orange); }
 .pipe-sla { font-size: 10px; color: var(--text-light); }
-.pipeline-note { display: flex; gap: 12px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); flex-wrap: wrap; }
-.pipe-side { background: var(--orange-light); color: var(--orange); border-radius: 99px; padding: 3px 10px; font-size: 11px; font-weight: 600; }
+.pipeline-note { display: flex; gap: 16px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+.pipe-side { background: var(--orange-light); color: var(--orange); border-radius: 12px; padding: 4px 10px; font-size: 11px; font-weight: 600; }
 .pipe-side.red { background: var(--red-light); color: var(--red); }
 
-/* ── RESOURCE LINKS ── */
-.resource-link { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: var(--text); transition: all 0.12s; border: 1.5px solid var(--border); background: var(--card); }
-.resource-link:hover { background: var(--primary); border-color: var(--primary); color: white; }
-.resource-icon { font-size: 15px; flex-shrink: 0; }
-.resource-name { font-weight: 600; font-size: 14px; }
-.resource-desc { font-size: 13px; color: var(--text-light); margin-top: 2px; }
+/* RESOURCE LINKS */
+.resource-link { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 6px; text-decoration: none; color: var(--text); transition: background 0.15s; border: 1px solid var(--border); background: var(--card); }
+.resource-link:hover { background: var(--blue-light); border-color: var(--blue); }
+.resource-icon { font-size: 22px; flex-shrink: 0; }
+.resource-name { font-weight: 600; font-size: 17px; }
+.resource-desc { font-size: 16px; color: var(--text-light); margin-top: 2px; }
 
-/* ── TABS ── */
-.tab-bar { display: flex; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 18px; overflow-x: auto; scrollbar-width: none; }
+/* TABS */
+.tab-bar { display: flex; gap: 2px; border-bottom: 2px solid var(--border); margin-bottom: 18px; overflow-x: auto; scrollbar-width: none; }
 .tab-bar::-webkit-scrollbar { display: none; }
-.tab-btn { padding: 8px 16px; border: none; background: none; cursor: pointer; font-size: 13px; font-weight: 600; color: var(--text-light); border-bottom: 3px solid transparent; border-top: 3px solid transparent; margin-bottom: -2px; transition: all 0.15s; white-space: nowrap; }
-.tab-btn:hover { color: var(--text); background: var(--bg); }
-.tab-btn.active { color: var(--primary); border-bottom-color: var(--green); }
+.tab-btn { padding: 9px 16px; border: none; background: none; cursor: pointer; font-size: 17px; font-weight: 600; color: var(--text-light); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.15s; white-space: nowrap; }
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
 
-/* ── ACCORDION ── */
-.acc-item { border: 1.5px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; overflow: hidden; }
-.acc-head { padding: 13px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 14px; background: var(--card); transition: background 0.12s; user-select: none; }
+/* ACCORDION */
+.acc-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; overflow: hidden; }
+.acc-head { padding: 13px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 17px; background: var(--card); transition: background 0.15s; user-select: none; }
 .acc-head:hover { background: var(--bg); }
-.acc-arrow { transition: transform 0.2s; color: var(--text-light); font-size: 11px; }
-.acc-body { display: none; padding: 16px 18px; border-top: 1px solid var(--border); background: var(--card); font-size: 14px; line-height: 1.7; }
+.acc-arrow { transition: transform 0.2s; color: var(--text-light); font-size: 12px; }
+.acc-body { display: none; padding: 16px 18px; border-top: 1px solid var(--border); background: var(--card); font-size: 17px; line-height: 1.85; }
 .acc-item.open .acc-arrow { transform: rotate(180deg); }
 .acc-item.open .acc-body { display: block; }
 
-/* ── TABLE ── */
-.tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-.tbl th { background: var(--bg); color: var(--text); font-weight: 700; padding: 9px 12px; text-align: left; border-bottom: 2px solid var(--border); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+/* TABLE */
+.tbl { width: 100%; border-collapse: collapse; font-size: 17px; }
+.tbl th { background: var(--bg); color: var(--text); font-weight: 700; padding: 9px 12px; text-align: left; border-bottom: 2px solid var(--border); }
 .tbl td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
 .tbl tr:last-child td { border-bottom: none; }
 .tbl tr:hover td { background: var(--bg); }
 
-/* ── BADGES ── */
-.badge { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 700; }
-.badge-green { background: var(--green-light); color: var(--green-d); }
+/* BADGES */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; }
+.badge-green { background: var(--green-light); color: var(--green); }
 .badge-blue { background: var(--blue-light); color: var(--blue); }
 .badge-orange { background: var(--orange-light); color: var(--orange); }
 .badge-red { background: var(--red-light); color: var(--red); }
 .badge-purple { background: var(--purple-light); color: var(--purple); }
 
-/* ── ALERT / CALLOUT ── */
-.alert { border-radius: var(--radius); padding: 13px 18px; margin-bottom: 12px; border-left: 3px solid; font-size: 13.5px; line-height: 1.55; }
-.alert-info { background: var(--blue-light); border-color: var(--blue); color: #003d99; }
-.alert-success { background: var(--green-light); border-color: var(--green); color: #095c2e; }
-.alert-warning { background: var(--orange-light); border-color: var(--orange); color: #7a4f00; }
-.alert-tip { background: var(--purple-light); border-color: var(--purple); color: #4b1fa8; }
+/* ALERT */
+.alert { border-radius: var(--radius); padding: 14px 20px; margin-bottom: 14px; border-left: 4px solid; font-size: 17px; }
+.alert-info { background: var(--blue-light); border-color: var(--blue); }
+.alert-success { background: var(--green-light); border-color: var(--green); }
+.alert-warning { background: var(--orange-light); border-color: var(--orange); }
+.alert-tip { background: #F3E8FF; border-color: var(--purple); }
 
-/* ── RULE CARDS ── */
-.rule { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; }
-.rule-icon { font-size: 14px; flex-shrink: 0; margin-top: 2px; }
-.rule-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
-.rule-desc { font-size: 13.5px; color: var(--text-light); line-height: 1.7; }
+/* RULE CARDS */
+.rule { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 8px; }
+.rule-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.rule-title { font-weight: 700; font-size: 18px; margin-bottom: 4px; }
+.rule-desc { font-size: 17px; color: var(--text-light); line-height: 1.8; }
 
-/* ── CHANNEL ── */
+/* CHANNEL */
 .channel { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); }
 .channel:last-child { border-bottom: none; }
-.channel-name { font-weight: 600; color: var(--blue); font-size: 13.5px; text-decoration: none; font-family: 'SF Mono', monospace; }
+.channel-name { font-weight: 600; color: var(--blue); font-size: 17px; text-decoration: none; font-family: monospace; }
 .channel-name:hover { text-decoration: underline; }
-.channel-desc { font-size: 13.5px; color: var(--text-light); }
-.channel-badge { font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 99px; }
+.channel-desc { font-size: 17px; color: var(--text-light); }
+.channel-badge { font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 8px; }
 
-/* ── MEETING ── */
-.meeting { display: grid; grid-template-columns: 220px 1fr; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+/* MEETING */
+.meeting { display: grid; grid-template-columns: 240px 1fr; align-items: center; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--border); }
 .meeting:last-child { border-bottom: none; }
-.meeting-time { font-size: 13px; font-weight: 700; color: var(--text-light); text-align: right; }
-.meeting-name { font-weight: 600; font-size: 14px; }
-.meeting-link { font-size: 13px; color: var(--blue); text-decoration: none; }
+.meeting-time { font-size: 16px; font-weight: 700; color: var(--text-light); text-align: right; }
+.meeting-name { font-weight: 600; font-size: 18px; }
+.meeting-link { font-size: 16px; color: var(--blue); text-decoration: none; }
 .meeting-link:hover { text-decoration: underline; }
 
-/* ── STEPS ── */
+/* STEPS */
 .steps { counter-reset: step; }
 .step { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
 .step:last-child { border-bottom: none; }
 .step-num { background: var(--primary); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
-.step-content { font-size: 14px; }
-.step-title { font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+.step-content { font-size: 17px; }
+.step-title { font-weight: 700; font-size: 18px; margin-bottom: 6px; }
 
-/* ── CHIP / LINK PILLS ── */
-.chip-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
-.chip {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: 12px; font-weight: 600;
-  color: var(--text); background: var(--bg);
-  border: 1.5px solid var(--border);
-  padding: 4px 11px; border-radius: 99px;
-  text-decoration: none; transition: all 0.12s;
-}
-.chip:hover { background: var(--primary); color: white; border-color: var(--primary); }
-.chip.green { background: var(--green-light); border-color: #b3edce; color: var(--green-d); }
-.chip.green:hover { background: var(--green-d); color: white; border-color: var(--green-d); }
-
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media (max-width: 800px) {
   .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr 1fr; }
-  .hero { padding: 80px 20px 40px; }
-  .hero-text h1 { font-size: 14px; }
-  .container { padding: 32px 20px 60px; }
+  .hero { padding: 28px 20px; }
+  .hero h1 { font-size: 22px; }
+  .hero-top { flex-direction: column; }
 }
 @media (max-width: 500px) {
   .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; }
@@ -254,15 +184,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
 
 <!-- HERO -->
 <nav class="top-nav">
-  <a href="#" class="nav-brand">
-    <div class="nav-brand-mark">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="8.5" height="8.5" rx="1.5"/><rect x="12.5" y="3" width="8.5" height="8.5" rx="1.5"/><rect x="3" y="12.5" width="8.5" height="8.5" rx="1.5"/><rect x="12.5" y="12.5" width="8.5" height="8.5" rx="1.5"/></svg>
-    </div>
-    <span class="nav-brand-text">Square</span>
-  </a>
-  <div class="nav-divider"></div>
-  <span class="nav-sub">GSO APAC Team Hub</span>
-  <div class="nav-divider"></div>
+  <a href="#" class="nav-brand">🛠️ GSO APAC</a>
   <a href="#playbook" class="nav-link">📖 Playbook</a>
   <a href="#team" class="nav-link">👥 Team</a>
   <a href="#meetings" class="nav-link">📅 Meetings</a>
@@ -281,9 +203,8 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
 </nav>
 <div class="hero">
   <div class="hero-top">
-    <div class="hero-eyebrow">🎯 Target: Go Live in 10 Business Days</div>
     <div class="hero-text">
-      <h1>GSO APAC <span>Team Hub</span> 🛠️</h1>
+      <h1>GSO APAC Team Hub 🛠️</h1>
       <p>Your one-stop home for everything you need to get Square sellers live — fast. Australia &amp; Japan.</p>
       <div style="display: flex; align-items: center; gap: 24px; margin-top: 18px; flex-wrap: wrap; justify-content: center;">
         <span style="display: flex; align-items: center; gap: 7px; font-size: 14px; opacity: 0.75; font-weight: 500;">
@@ -322,7 +243,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
 
   <!-- PLAYBOOK -->
   <section class="section" id="playbook">
-    <div class="alert alert-info" style="font-size: 14px; padding: 16px 20px;">
+    <div class="alert alert-info" style="font-size: 17px; padding: 16px 20px;">
       📖 <strong>go/gsoplaybook</strong> — Your comprehensive role guide. <a href="https://go.sqprod.co/gsoplaybook" target="_blank" style="color: var(--blue); font-weight: 700;">Bookmark it now →</a>
     </div>
   </section>
@@ -334,15 +255,15 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
 
         <!-- AU Header -->
         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px; padding-bottom: 12px; border-bottom: 2px solid var(--blue-light);">
-          <span style="font-size: 14px;">🇦🇺</span>
-          <div style="font-weight: 700; font-size: 14px; color: var(--primary);">Australia</div>
+          <span style="font-size: 22px;">🇦🇺</span>
+          <div style="font-weight: 700; font-size: 17px; color: var(--primary);">Australia</div>
         </div>
 
           <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--blue-light);">
             <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--blue); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">KS</div>
             <div style="flex: 1;">
-              <div style="font-weight: 600; font-size: 13px;">Kamilla Schou Warr</div>
-              <div style="font-size: 13px; color: var(--text-light);">📍 Melbourne</div>
+              <div style="font-weight: 600; font-size: 16px;">Kamilla Schou Warr</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
             </div>
             <span style="background: var(--blue); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 12px; white-space: nowrap;">TEAM LEAD</span>
           </div>
@@ -350,8 +271,8 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
           <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--orange-light);">
             <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--orange); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">MF</div>
             <div style="flex: 1;">
-              <div style="font-weight: 600; font-size: 13px;">Meri Fakraufon</div>
-              <div style="font-size: 13px; color: var(--text-light);">📍 Brisbane</div>
+              <div style="font-weight: 600; font-size: 16px;">Meri Fakraufon</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Brisbane</div>
             </div>
             <span style="background: var(--orange); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 12px; white-space: nowrap;">VENDOR MGR</span>
           </div>
@@ -359,48 +280,48 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
           <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
             <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">KB</div>
             <div style="flex: 1;">
-              <div style="font-weight: 600; font-size: 13px;">Kristian Bojsen-Moller</div>
-              <div style="font-size: 13px; color: var(--text-light);">📍 Melbourne</div>
+              <div style="font-weight: 600; font-size: 16px;">Kristian Bojsen-Moller</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
             </div>
           </div>
 
           <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
             <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">MC</div>
             <div style="flex: 1;">
-              <div style="font-weight: 600; font-size: 13px;">Macarena Castillo</div>
-              <div style="font-size: 13px; color: var(--text-light);">📍 Melbourne</div>
+              <div style="font-weight: 600; font-size: 16px;">Macarena Castillo</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
             </div>
           </div>
 
           <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
             <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">CB</div>
             <div style="flex: 1;">
-              <div style="font-weight: 600; font-size: 13px;">Chandreyee Bose</div>
-              <div style="font-size: 13px; color: var(--text-light);">📍 Melbourne</div>
+              <div style="font-weight: 600; font-size: 16px;">Chandreyee Bose</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
             </div>
           </div>
 
           <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
             <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">JS</div>
             <div style="flex: 1;">
-              <div style="font-weight: 600; font-size: 13px;">Josh Stoffels</div>
-              <div style="font-size: 13px; color: var(--text-light);">📍 Melbourne</div>
+              <div style="font-weight: 600; font-size: 16px;">Josh Stoffels</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
             </div>
           </div>
 
           <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
             <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">BC</div>
             <div style="flex: 1;">
-              <div style="font-weight: 600; font-size: 13px;">Bradley Curtis</div>
-              <div style="font-size: 13px; color: var(--text-light);">📍 Melbourne</div>
+              <div style="font-weight: 600; font-size: 16px;">Bradley Curtis</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
             </div>
           </div>
 
           <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--green-light);">
             <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--green); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">GS</div>
             <div style="flex: 1;">
-              <div style="font-weight: 600; font-size: 13px;">Giacinta Squires</div>
-              <div style="font-size: 13px; color: var(--text-light);">📍 Melbourne</div>
+              <div style="font-weight: 600; font-size: 16px;">Giacinta Squires</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
             </div>
             <span style="background: var(--green); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 12px; white-space: nowrap;">STARTS 18 MAY</span>
           </div>
@@ -408,46 +329,46 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
           <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
             <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">BB</div>
             <div style="flex: 1;">
-              <div style="font-weight: 600; font-size: 13px;">Ben Braun</div>
-              <div style="font-size: 13px; color: var(--text-light);">📍 Sydney</div>
+              <div style="font-weight: 600; font-size: 16px;">Ben Braun</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Sydney</div>
             </div>
           </div>
 
           <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
             <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">JM</div>
             <div style="flex: 1;">
-              <div style="font-weight: 600; font-size: 13px;">Jamahl</div>
-              <div style="font-size: 13px; color: var(--text-light);">📍 Canberra</div>
+              <div style="font-weight: 600; font-size: 16px;">Jamahl</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Canberra</div>
             </div>
           </div>
 
         <!-- JP Header -->
         <div style="display: flex; align-items: center; gap: 10px; margin-top: 16px; margin-bottom: 4px; padding-bottom: 12px; border-bottom: 2px solid var(--red-light);">
-          <span style="font-size: 14px;">🇯🇵</span>
-          <div style="font-weight: 700; font-size: 14px; color: var(--primary);">Japan</div>
+          <span style="font-size: 22px;">🇯🇵</span>
+          <div style="font-weight: 700; font-size: 17px; color: var(--primary);">Japan</div>
         </div>
 
           <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
             <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">TK</div>
             <div style="flex: 1;">
-              <div style="font-weight: 600; font-size: 13px;">Takao Kinjo</div>
-              <div style="font-size: 13px; color: var(--text-light);">📍 Tokyo</div>
+              <div style="font-weight: 600; font-size: 16px;">Takao Kinjo</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Tokyo</div>
             </div>
           </div>
 
           <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
             <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">MA</div>
             <div style="flex: 1;">
-              <div style="font-weight: 600; font-size: 13px;">Misho Arai</div>
-              <div style="font-size: 13px; color: var(--text-light);">📍 Tokyo</div>
+              <div style="font-weight: 600; font-size: 16px;">Misho Arai</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Tokyo</div>
             </div>
           </div>
 
           <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
             <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">MH</div>
             <div style="flex: 1;">
-              <div style="font-weight: 600; font-size: 13px; font-family: monospace;">maryh@squareup.com</div>
-              <div style="font-size: 13px; color: var(--text-light);">📍 Tokyo</div>
+              <div style="font-weight: 600; font-size: 16px; font-family: monospace;">maryh@squareup.com</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Tokyo</div>
             </div>
           </div>
 
@@ -462,14 +383,14 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
         <div class="meeting-time">🇦🇺 Mon 9:00–9:20am AEDT</div>
         <div>
           <div class="meeting-name">APAC Monday Standup</div>
-          <div style="font-size: 13px; color: var(--text-light);">Weekly team standup — weekly kickoff and alignment</div>
+          <div style="font-size: 16px; color: var(--text-light);">Weekly team standup — weekly kickoff and alignment</div>
         </div>
       </div>
       <div class="meeting">
         <div class="meeting-time">🇦🇺 Biweekly Fri 9:00–9:45am AEDT</div>
         <div>
           <div class="meeting-name">APAC Team Meeting</div>
-          <div style="font-size: 13px; color: var(--text-light);">
+          <div style="font-size: 16px; color: var(--text-light);">
             <a href="https://docs.google.com/document/d/13WBHjJRp0TFOxfaC8XMOmjiLmI9CafFLTj8Ee9Qu8ro/edit" target="_blank" class="meeting-link">Agenda &amp; Roster Doc</a> ·
             <a href="https://docs.google.com/presentation/d/1Z0X5r_s_5jVRODiuS81WlTup3MbvLFAsRn7HbQZ4Bq8/edit" target="_blank" class="meeting-link">Slide deck template</a> ·
             <a href="https://drive.google.com/drive/folders/1UNlTA0y_WPVolLgxCxe-8JpEs9s9B1k6" target="_blank" class="meeting-link">Meeting folder</a>
@@ -480,7 +401,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
         <div class="meeting-time">📊 Quarterly</div>
         <div>
           <div class="meeting-name">GSO All Hands</div>
-          <div style="font-size: 13px; color: var(--text-light);">Global GSO quarterly update</div>
+          <div style="font-size: 16px; color: var(--text-light);">Global GSO quarterly update</div>
         </div>
       </div>
       <div class="alert alert-info" style="margin-top: 12px;">📌 <strong>Hosting a team meeting?</strong> Share slide deck + recording with the team and ensure both are added to the Roster doc after each session.</div>
@@ -517,8 +438,8 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
     <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; align-items: stretch;">
       <a href="https://blockcell.sqprod.co/sites/gso-rep-dashboard/" target="_blank" class="quick-link" style="display: inline-flex; background: var(--blue-light); border-color: var(--blue); color: var(--blue); font-size: 14px; padding: 10px 16px;">🧑‍💻 GSO Rep Dashboard</a>
       <div style="flex: 1; min-width: 260px; background: var(--orange-light); border: 1px solid var(--orange); border-radius: 8px; padding: 10px 16px; display: flex; align-items: center; gap: 10px;">
-        <span style="font-size: 14px;">⏱️</span>
-        <div style="font-size: 13px; color: var(--text);"><strong>Reminder:</strong> If the next step is further than <strong>7 days</strong> in the future, please place the DSR <strong>on hold</strong>.</div>
+        <span style="font-size: 18px;">⏱️</span>
+        <div style="font-size: 16px; color: var(--text);"><strong>Reminder:</strong> If the next step is further than <strong>7 days</strong> in the future, please place the DSR <strong>on hold</strong>.</div>
       </div>
     </div>
   </section>
@@ -608,20 +529,20 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
 
     <div id="bp-dsr" class="tab-pane">
       <div class="card" style="margin-bottom: 16px; border-left: 4px solid var(--blue); background: var(--blue-light);">
-        <div style="font-weight: 700; font-size: 14px; margin-bottom: 12px; color: var(--primary);">📋 After Every Virtual Training Session — Required Steps</div>
-        <div style="font-size: 13px; color: var(--text-light); margin-bottom: 16px;">Complete all three steps after <strong>every</strong> virtual training session. These are expected of your role and stated in the GSO Playbook.</div>
+        <div style="font-weight: 700; font-size: 17px; margin-bottom: 12px; color: var(--primary);">📋 After Every Virtual Training Session — Required Steps</div>
+        <div style="font-size: 16px; color: var(--text-light); margin-bottom: 16px;">Complete all three steps after <strong>every</strong> virtual training session. These are expected of your role and stated in the GSO Playbook.</div>
         <div style="display: flex; flex-direction: column; gap: 12px;">
           <div style="display: flex; gap: 12px; align-items: flex-start;">
             <div style="width: 26px; height: 26px; border-radius: 50%; background: var(--blue); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">1</div>
-            <div style="font-size: 13px; line-height: 1.7;">Find notes in the DSA from the completed virtual training (or closeout form from Site Survey/Installation) and <strong>add notes in Chatter and tag the AE</strong>, or post in the designated Slack channel.</div>
+            <div style="font-size: 16px; line-height: 1.7;">Find notes in the DSA from the completed virtual training (or closeout form from Site Survey/Installation) and <strong>add notes in Chatter and tag the AE</strong>, or post in the designated Slack channel.</div>
           </div>
           <div style="display: flex; gap: 12px; align-items: flex-start;">
             <div style="width: 26px; height: 26px; border-radius: 50%; background: var(--blue); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">2</div>
-            <div style="font-size: 13px; line-height: 1.7;">Find the <a href="https://revenue.io" target="_blank" style="color: var(--blue); font-weight: 600;">Revenue.io</a> call and run through your preferred AI bot to create <strong>post-call action items + post-call email</strong>. Add action items in Chatter and/or Slack and send a follow-up email to your seller. <strong>⚠️ You must send an email to the seller after EACH touchpoint</strong> with follow-up and check-in.</div>
+            <div style="font-size: 16px; line-height: 1.7;">Find the <a href="https://revenue.io" target="_blank" style="color: var(--blue); font-weight: 600;">Revenue.io</a> call and run through your preferred AI bot to create <strong>post-call action items + post-call email</strong>. Add action items in Chatter and/or Slack and send a follow-up email to your seller. <strong>⚠️ You must send an email to the seller after EACH touchpoint</strong> with follow-up and check-in.</div>
           </div>
           <div style="display: flex; gap: 12px; align-items: flex-start;">
             <div style="width: 26px; height: 26px; border-radius: 50%; background: var(--blue); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">3</div>
-            <div style="font-size: 13px; line-height: 1.7;"><strong>Update the DSR on the same day</strong> with: <span style="background: white; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin: 0 2px;">Next Steps</span> <span style="background: white; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin: 0 2px;">Next Step Date</span> <span style="background: white; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin: 0 2px;">Status</span> <span style="background: white; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin: 0 2px;">Seller Desired Go Live Date</span> (every time it changes).</div>
+            <div style="font-size: 16px; line-height: 1.7;"><strong>Update the DSR on the same day</strong> with: <span style="background: white; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin: 0 2px;">Next Steps</span> <span style="background: white; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin: 0 2px;">Next Step Date</span> <span style="background: white; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin: 0 2px;">Status</span> <span style="background: white; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin: 0 2px;">Seller Desired Go Live Date</span> (every time it changes).</div>
           </div>
         </div>
         <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(0,82,204,0.2); font-size: 15px; color: var(--blue);">
@@ -807,11 +728,11 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
     <div class="section-title">🚚 3P Dispatch — Australia</div>
     <div class="grid grid-2" style="margin-bottom: 16px;">
       <div class="card" style="border-left: 4px solid var(--green);">
-        <div style="font-weight: 700; font-size: 14px; margin-bottom: 6px;">🛠️ Tech Pantry</div>
-        <div style="font-size: 13px; color: var(--text-light); margin-bottom: 8px;">Best for white glove implementation</div>
+        <div style="font-weight: 700; font-size: 17px; margin-bottom: 6px;">🛠️ Tech Pantry</div>
+        <div style="font-size: 16px; color: var(--text-light); margin-bottom: 8px;">Best for white glove implementation</div>
         <div class="badge badge-green" style="margin-bottom: 10px; font-size: 13px; padding: 3px 10px;">$1M+ GPV Sellers</div>
-        <div style="font-size: 13px; margin-bottom: 12px;">1 FTE Melbourne · 1 FTE Sydney</div>
-        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px;">
+        <div style="font-size: 16px; margin-bottom: 12px;">1 FTE Melbourne · 1 FTE Sydney</div>
+        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 16px;">
           <div>💬 Connect: <a href="#" style="color: var(--blue);">#techpantry_square_connect</a></div>
           <div>📨 Dispatch: <a href="https://square.enterprise.slack.com/archives/C0896AJSF3K" style="color: var(--blue);">#techpantry_square_dispatch_request</a></div>
           <div>🆘 Onsite help: <a href="https://square.enterprise.slack.com/archives/C088W5GEZQC" style="color: var(--blue);">#techpantry_square_onsite_help</a></div>
@@ -820,11 +741,11 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
         </div>
       </div>
       <div class="card" style="border-left: 4px solid var(--blue);">
-        <div style="font-weight: 700; font-size: 14px; margin-bottom: 6px;">🌍 One World Rental AU</div>
-        <div style="font-size: 13px; color: var(--text-light); margin-bottom: 8px;">Best for lower GPV sellers</div>
+        <div style="font-weight: 700; font-size: 17px; margin-bottom: 6px;">🌍 One World Rental AU</div>
+        <div style="font-size: 16px; color: var(--text-light); margin-bottom: 8px;">Best for lower GPV sellers</div>
         <div class="badge badge-blue" style="margin-bottom: 10px; font-size: 13px; padding: 3px 10px;">Sub $1M GPV Sellers</div>
-        <div style="font-size: 13px; margin-bottom: 12px;">Melbourne · Sydney · Adelaide · Brisbane · Perth</div>
-        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px;">
+        <div style="font-size: 16px; margin-bottom: 12px;">Melbourne · Sydney · Adelaide · Brisbane · Perth</div>
+        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 16px;">
           <div>💬 Connect: <span style="color: var(--blue);">#oneworldrental_au_square_connect</span></div>
           <div>📨 Dispatch: <a href="https://square.enterprise.slack.com/archives/C08LDUPSE7N" style="color: var(--blue);">#oneworldrental_au_square_dispatch</a></div>
           <div>🆘 Onsite help: <span style="color: var(--blue);">#oneworldrental_au_square_onsite-help</span></div>
@@ -850,7 +771,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
     <!-- 3P Booking Links -->
 <div class="section-title" style="font-size:16px; margin-top: 20px;">🔧 3P Partner Booking Links</div>
 <div class="alert alert-warning" style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px;">
-  <span style="font-size: 14px; flex-shrink: 0;">⚠️</span>
+  <span style="font-size: 18px; flex-shrink: 0;">⚠️</span>
   <div><strong>Heads up:</strong> The team will move to the <strong>GANTT chart by end of April 2026</strong>. ALL team members are expected to utilise the GANTT chart from that point forward. The Freebusy links below are temporary.</div>
 </div>
 <div class="grid grid-3" style="margin-bottom: 16px;">
@@ -888,47 +809,47 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;">
     <div>
     <!-- Active Flow -->
-    <div style="font-weight: 700; font-size: 13px; color: var(--primary); margin-bottom: 12px;">📈 Active Statuses — In Order <span style="font-weight: 400; font-size: 14px; color: var(--text-light); margin-left: 8px;">Move through these in order · update on the same day as each milestone</span></div>
+    <div style="font-weight: 700; font-size: 16px; color: var(--primary); margin-bottom: 12px;">📈 Active Statuses — In Order <span style="font-weight: 400; font-size: 14px; color: var(--text-light); margin-left: 8px;">Move through these in order · update on the same day as each milestone</span></div>
     <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 0;">
 
       <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--blue);">
         <div style="margin-bottom: 8px;"><span style="background: var(--blue); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Assigned</span></div>
-        <div style="font-size: 13px; line-height: 1.7;">The DSR has been assigned to you. No action needed on the status yet — wait for the AE/AM intro email before moving forward.</div>
+        <div style="font-size: 16px; line-height: 1.7;">The DSR has been assigned to you. No action needed on the status yet — wait for the AE/AM intro email before moving forward.</div>
       </div>
 
       <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--blue);">
         <div style="margin-bottom: 8px;"><span style="background: var(--blue); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Seller Outreach Complete</span></div>
-        <div style="font-size: 13px; line-height: 1.7;">The intro email from AE/AM has been sent to the seller. Update to this status as soon as you see the email in your inbox.</div>
+        <div style="font-size: 16px; line-height: 1.7;">The intro email from AE/AM has been sent to the seller. Update to this status as soon as you see the email in your inbox.</div>
       </div>
 
       <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--green);">
         <div style="margin-bottom: 8px;"><span style="background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Kick Off Call Complete</span></div>
-        <div style="font-size: 13px; line-height: 1.7;">The Kickoff Call has been completed, a desired Go Live Date has been set, and there is full alignment on next steps.</div>
+        <div style="font-size: 16px; line-height: 1.7;">The Kickoff Call has been completed, a desired Go Live Date has been set, and there is full alignment on next steps.</div>
       </div>
 
       <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--green);">
         <div style="margin-bottom: 8px;"><span style="background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Task in Progress</span></div>
-        <div style="font-size: 13px; line-height: 1.7;">A task has been submitted to BPO and is being worked on — e.g. menu build, migration, or MILO.</div>
+        <div style="font-size: 16px; line-height: 1.7;">A task has been submitted to BPO and is being worked on — e.g. menu build, migration, or MILO.</div>
       </div>
 
       <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--green);">
         <div style="margin-bottom: 8px;"><span style="background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Dashboard Training Complete</span></div>
-        <div style="font-size: 13px; line-height: 1.7;">The seller has completed their Dashboard Training session with the 3P partner.</div>
+        <div style="font-size: 16px; line-height: 1.7;">The seller has completed their Dashboard Training session with the 3P partner.</div>
       </div>
 
       <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--green);">
         <div style="margin-bottom: 8px;"><span style="background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">App Training Complete</span></div>
-        <div style="font-size: 13px; line-height: 1.7;">The seller has completed their POS / App Training session with the 3P partner.</div>
+        <div style="font-size: 16px; line-height: 1.7;">The seller has completed their POS / App Training session with the 3P partner.</div>
       </div>
 
       <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--green);">
         <div style="margin-bottom: 8px;"><span style="background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">SO Training Complete</span></div>
-        <div style="font-size: 13px; line-height: 1.7;">The seller has completed their Square Online (SO) Training session with the 3P partner.</div>
+        <div style="font-size: 16px; line-height: 1.7;">The seller has completed their Square Online (SO) Training session with the 3P partner.</div>
       </div>
 
       <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--purple);">
         <div style="margin-bottom: 8px;"><span style="background: var(--purple); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Training Complete — Post Implementation</span></div>
-        <div style="font-size: 13px; line-height: 1.7;">All purchased seller training has been completed. This begins their <strong>one-week post-support period</strong> for an optional 1-hour Q&amp;A / post go-live session.</div>
+        <div style="font-size: 16px; line-height: 1.7;">All purchased seller training has been completed. This begins their <strong>one-week post-support period</strong> for an optional 1-hour Q&amp;A / post go-live session.</div>
       </div>
 
     </div>
@@ -936,14 +857,14 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
     </div><!-- end active col -->
     <div>
     <!-- Hold / Lost / Rejected -->
-    <div style="font-weight: 700; font-size: 13px; color: var(--primary); margin-bottom: 12px;">⚠️ Hold, Lost &amp; Rejected <span style="font-weight: 400; font-size: 14px; color: var(--text-light); margin-left: 8px;">Use when a seller is paused, disengaged, or the DSR can no longer proceed</span></div>
+    <div style="font-weight: 700; font-size: 16px; color: var(--primary); margin-bottom: 12px;">⚠️ Hold, Lost &amp; Rejected <span style="font-weight: 400; font-size: 14px; color: var(--text-light); margin-left: 8px;">Use when a seller is paused, disengaged, or the DSR can no longer proceed</span></div>
     <div style="display: flex; flex-direction: column; gap: 8px;">
 
       <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--orange);">
         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
           <span style="background: var(--orange); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">On Hold</span>
         </div>
-        <div style="font-size: 13px; line-height: 1.6; margin-bottom: 10px;">If the seller's training is postponed (construction delays, target date more than 3 weeks out, etc.) move the DSR to On Hold until the seller is ready to resume. <strong>Do not place a seller On Hold if you are actively working with them.</strong> The main reason to use On Hold is if your next step is not scheduled or unknown.</div>
+        <div style="font-size: 16px; line-height: 1.6; margin-bottom: 10px;">If the seller's training is postponed (construction delays, target date more than 3 weeks out, etc.) move the DSR to On Hold until the seller is ready to resume. <strong>Do not place a seller On Hold if you are actively working with them.</strong> The main reason to use On Hold is if your next step is not scheduled or unknown.</div>
         <div style="font-size: 13px; font-weight: 600; color: var(--text-light); margin-bottom: 8px;">Sub-statuses for On Hold — use the closest fit:</div>
         <div style="display: flex; flex-wrap: wrap; gap: 6px;">
           <span style="background: var(--orange-light); color: var(--orange); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 12px; border: 1px solid var(--orange);">Product Blocker</span>
@@ -956,19 +877,19 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
 
       <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--red);">
         <div style="margin-bottom: 8px;"><span style="background: var(--red); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Lost — No Seller Contact</span></div>
-        <div style="font-size: 13px; line-height: 1.7;">No response after multiple outreach attempts <strong>and</strong> 30 days in On Hold status. If you trained the seller, place in <strong>Implementation Complete</strong> instead. Do not mark Lost if you completed training.</div>
+        <div style="font-size: 16px; line-height: 1.7;">No response after multiple outreach attempts <strong>and</strong> 30 days in On Hold status. If you trained the seller, place in <strong>Implementation Complete</strong> instead. Do not mark Lost if you completed training.</div>
       </div>
 
       <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--red);">
         <div style="margin-bottom: 8px;"><span style="background: var(--red); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Lost — Churn</span></div>
-        <div style="font-size: 13px; line-height: 1.7;">The seller has disengaged or abandoned the process. Do not mark the seller live if you completed any training for them.</div>
+        <div style="font-size: 16px; line-height: 1.7;">The seller has disengaged or abandoned the process. Do not mark the seller live if you completed any training for them.</div>
       </div>
 
       <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--red);">
         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
           <span style="background: var(--red); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Rejected</span>
         </div>
-        <div style="font-size: 13px; line-height: 1.6; margin-bottom: 10px;">The DSR is rejected due to incorrect escalation, lack of seller engagement, incorrect information, or the seller is not looking to kick off in the next 2–4 weeks. Use the proper sub-status when rejecting — use your best judgement for the closest fit.</div>
+        <div style="font-size: 16px; line-height: 1.6; margin-bottom: 10px;">The DSR is rejected due to incorrect escalation, lack of seller engagement, incorrect information, or the seller is not looking to kick off in the next 2–4 weeks. Use the proper sub-status when rejecting — use your best judgement for the closest fit.</div>
       </div>
 
     </div><!-- end hold col -->
@@ -977,7 +898,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
     <!-- Implementation Complete — full width -->
     <div style="padding: 18px 20px; background: var(--green-light); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--green); margin-top: 8px;">
       <div style="margin-bottom: 8px;"><span style="background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">✅ Implementation Complete</span></div>
-      <div style="font-size: 13px; line-height: 1.7;">Once the one-week post-implementation support ends, the Onboarding Specialist sends the <strong>"Final Email"</strong> (cc'ing AE/AM). This status applies to both Active and any closed-out Hold/Lost scenarios where training was completed.</div>
+      <div style="font-size: 16px; line-height: 1.7;">Once the one-week post-implementation support ends, the Onboarding Specialist sends the <strong>"Final Email"</strong> (cc'ing AE/AM). This status applies to both Active and any closed-out Hold/Lost scenarios where training was completed.</div>
     </div>
 
   </section>
@@ -1211,7 +1132,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
     <div class="section-title">📊 GSO/TPM Career Ladder</div>
     <div class="card" style="margin-top: 14px;">
       <div style="font-weight: 700; margin-bottom: 10px;">📊 GSO/TPM Career Ladder</div>
-      <div style="font-size: 13px; color: var(--text-light); margin-bottom: 12px;">Defines the path for growth within GSO — experience, scope, and key responsibilities at each Square level. Talk to your lead about your level-specific targets and career goals in your 1:1s.</div>
+      <div style="font-size: 16px; color: var(--text-light); margin-bottom: 12px;">Defines the path for growth within GSO — experience, scope, and key responsibilities at each Square level. Talk to your lead about your level-specific targets and career goals in your 1:1s.</div>
       <a href="https://docs.google.com/spreadsheets/d/1dFIWJ8ci-2V_hDIhquAyBcwr9g2MFCkQHQKZDPVUF2s/edit?gid=136062247" target="_blank" class="quick-link" style="display: inline-flex; background: var(--blue-light); border-color: var(--blue); color: var(--blue);">📋 View GSO Career Ladder</a>
     </div>
   </section>
@@ -1220,21 +1141,21 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
     <div class="section-title">🚀 Career Growth</div>
     <div class="grid grid-3">
       <div class="card">
-        <div style="font-size: 14px; margin-bottom: 8px;">🔄</div>
-        <div style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Performance Reviews</div>
-        <div style="font-size: 13px; color: var(--text-light); margin-bottom: 10px;">Biannual in <strong>July &amp; January</strong> via Loop. Evaluates Impact, Behavior &amp; Betterment.</div>
+        <div style="font-size: 22px; margin-bottom: 8px;">🔄</div>
+        <div style="font-weight: 700; font-size: 17px; margin-bottom: 4px;">Performance Reviews</div>
+        <div style="font-size: 16px; color: var(--text-light); margin-bottom: 10px;">Biannual in <strong>July &amp; January</strong> via Loop. Evaluates Impact, Behavior &amp; Betterment.</div>
         <a href="https://my.sqprod.co/performance/kamilla/home" target="_blank" style="color: var(--blue); font-size: 12px; font-weight: 600;">go/loop →</a>
       </div>
       <div class="card">
-        <div style="font-size: 14px; margin-bottom: 8px;">⬆️</div>
-        <div style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Promotions</div>
-        <div style="font-size: 13px; color: var(--text-light); margin-bottom: 10px;">Biannual: <strong>Q1 &amp; Q3</strong>. Revenue Org only. Based on sustained performance + business needs.</div>
+        <div style="font-size: 22px; margin-bottom: 8px;">⬆️</div>
+        <div style="font-weight: 700; font-size: 17px; margin-bottom: 4px;">Promotions</div>
+        <div style="font-size: 16px; color: var(--text-light); margin-bottom: 10px;">Biannual: <strong>Q1 &amp; Q3</strong>. Revenue Org only. Based on sustained performance + business needs.</div>
         <a href="https://my.sqprod.co/resources/promotions-at-block" target="_blank" style="color: var(--blue); font-size: 12px; font-weight: 600;">go/promotions →</a>
       </div>
       <div class="card">
-        <div style="font-size: 14px; margin-bottom: 8px;">💰</div>
-        <div style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">Compensation</div>
-        <div style="font-size: 13px; color: var(--text-light); margin-bottom: 10px;">Annual review cycle. Pay equity benchmarked against industry standards.</div>
+        <div style="font-size: 22px; margin-bottom: 8px;">💰</div>
+        <div style="font-weight: 700; font-size: 17px; margin-bottom: 4px;">Compensation</div>
+        <div style="font-size: 16px; color: var(--text-light); margin-bottom: 10px;">Annual review cycle. Pay equity benchmarked against industry standards.</div>
         <a href="https://my.sqprod.co/resources/compensation" target="_blank" style="color: var(--blue); font-size: 12px; font-weight: 600;">go/compensation →</a>
       </div>
     </div>
