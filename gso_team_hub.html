@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSO APAC Team Hub 🛠️</title>
+<style>
+:root {
+  --bg: #F4F5F7;
+  --card: #FFFFFF;
+  --primary: #1A1F36;
+  --green: #00875A;
+  --green-light: #E3FCEF;
+  --blue: #0052CC;
+  --blue-light: #DEEBFF;
+  --orange: #FF8B00;
+  --orange-light: #FFFAE6;
+  --red: #DE350B;
+  --red-light: #FFEBE6;
+  --purple: #6B4FBB;
+  --purple-light: #EAE6FF;
+  --text: #172B4D;
+  --text-light: #5E6C84;
+  --border: #DFE1E6;
+  --shadow: 0 1px 3px rgba(9,30,66,.12), 0 0 1px rgba(9,30,66,.16);
+  --radius: 8px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); font-size: 18px; line-height: 2.0; }
+
+/* NAV */
+
+
+/* HERO */
+.hero { background: linear-gradient(140deg, #1A1F36 0%, #2E3561 60%, #1A4A6B 100%); color: white; padding: 80px 64px 64px; text-align: center; }
+.hero-top { display: flex; justify-content: center; align-items: flex-start; gap: 20px; margin-bottom: 28px; flex-direction: column; align-items: center; }
+.hero-text h1 { font-size: 54px; font-weight: 800; margin-bottom: 14px; line-height: 1.1; }
+.hero-text p { font-size: 20px; opacity: 0.85; max-width: 680px; line-height: 1.7; margin: 0 auto; }
+.hero-badge { background: rgba(0,135,90,0.25); border: 1px solid rgba(0,135,90,0.5); color: #7EFFC1; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; white-space: nowrap; flex-shrink: 0; margin-top: 4px; }
+.top-nav { position: sticky; top: 0; z-index: 100; background: var(--primary); padding: 0 20px; display: flex; align-items: center; height: 52px; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+.top-nav::-webkit-scrollbar { display: none; }
+.nav-brand { font-weight: 700; font-size: 17px; color: white; text-decoration: none; white-space: nowrap; margin-right: 16px; flex-shrink: 0; }
+.nav-link { color: rgba(255,255,255,0.7); text-decoration: none; padding: 6px 10px; border-radius: 6px; font-size: 14px; white-space: nowrap; transition: all 0.15s; flex-shrink: 0; }
+.nav-link:hover { background: rgba(255,255,255,0.12); color: white; }
+.quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; justify-content: center; }
+.quick-link { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.9); text-decoration: none; padding: 7px 14px; border-radius: 20px; font-size: 14px; font-weight: 500; transition: all 0.15s; display: flex; align-items: center; gap: 5px; }
+.quick-link:hover { background: rgba(255,255,255,0.2); color: white; border-color: rgba(255,255,255,0.35); }
+
+/* CONTAINER */
+.container { max-width: 1200px; margin: 0 auto; padding: 52px 80px; }
+.section { margin-bottom: 64px; }
+.section-title { font-size: 28px; font-weight: 700; color: var(--primary); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.section-subtitle { font-size: 17px; color: var(--text-light); font-weight: 400; margin-left: 4px; }
+
+/* GRID */
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.grid-5 { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+
+/* CARDS */
+.card { background: var(--card); border-radius: var(--radius); padding: 30px 34px; box-shadow: var(--shadow); }
+
+/* METRIC CARDS */
+.metric { background: var(--card); border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); border-top: 3px solid var(--green); text-align: center; }
+.metric-num { font-size: 40px; font-weight: 800; color: var(--green); line-height: 1.1; }
+.metric-label { font-size: 17px; font-weight: 600; color: var(--text); margin-top: 4px; }
+.metric-sub { font-size: 16px; color: var(--text-light); margin-top: 3px; }
+.metric.blue { border-top-color: var(--blue); }
+.metric.blue .metric-num { color: var(--blue); }
+.metric.orange { border-top-color: var(--orange); }
+.metric.orange .metric-num { color: var(--orange); }
+.metric.purple { border-top-color: var(--purple); }
+.metric.purple .metric-num { color: var(--purple); }
+
+/* DSR PIPELINE */
+.pipeline-wrap { background: var(--card); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); overflow-x: auto; }
+.pipeline { display: flex; align-items: flex-start; gap: 6px; min-width: 700px; }
+.pipe-step { flex: 1; text-align: center; }
+.pipe-arrow { font-size: 18px; color: var(--border); margin-top: 10px; flex-shrink: 0; align-self: flex-start; }
+.pipe-badge { border-radius: 16px; padding: 5px 10px; font-size: 10px; font-weight: 700; display: inline-block; margin-bottom: 5px; line-height: 1.3; }
+.pipe-badge.blue { background: var(--blue-light); color: var(--blue); }
+.pipe-badge.green { background: var(--green-light); color: var(--green); }
+.pipe-badge.orange { background: var(--orange-light); color: var(--orange); }
+.pipe-sla { font-size: 10px; color: var(--text-light); }
+.pipeline-note { display: flex; gap: 16px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+.pipe-side { background: var(--orange-light); color: var(--orange); border-radius: 12px; padding: 4px 10px; font-size: 11px; font-weight: 600; }
+.pipe-side.red { background: var(--red-light); color: var(--red); }
+
+/* RESOURCE LINKS */
+.resource-link { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 6px; text-decoration: none; color: var(--text); transition: background 0.15s; border: 1px solid var(--border); background: var(--card); }
+.resource-link:hover { background: var(--blue-light); border-color: var(--blue); }
+.resource-icon { font-size: 22px; flex-shrink: 0; }
+.resource-name { font-weight: 600; font-size: 17px; }
+.resource-desc { font-size: 16px; color: var(--text-light); margin-top: 2px; }
+
+/* TABS */
+.tab-bar { display: flex; gap: 2px; border-bottom: 2px solid var(--border); margin-bottom: 18px; overflow-x: auto; scrollbar-width: none; }
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn { padding: 9px 16px; border: none; background: none; cursor: pointer; font-size: 17px; font-weight: 600; color: var(--text-light); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.15s; white-space: nowrap; }
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* ACCORDION */
+.acc-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; overflow: hidden; }
+.acc-head { padding: 13px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 17px; background: var(--card); transition: background 0.15s; user-select: none; }
+.acc-head:hover { background: var(--bg); }
+.acc-arrow { transition: transform 0.2s; color: var(--text-light); font-size: 12px; }
+.acc-body { display: none; padding: 16px 18px; border-top: 1px solid var(--border); background: var(--card); font-size: 17px; line-height: 1.85; }
+.acc-item.open .acc-arrow { transform: rotate(180deg); }
+.acc-item.open .acc-body { display: block; }
+
+/* TABLE */
+.tbl { width: 100%; border-collapse: collapse; font-size: 17px; }
+.tbl th { background: var(--bg); color: var(--text); font-weight: 700; padding: 9px 12px; text-align: left; border-bottom: 2px solid var(--border); }
+.tbl td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl tr:hover td { background: var(--bg); }
+
+/* BADGES */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; }
+.badge-green { background: var(--green-light); color: var(--green); }
+.badge-blue { background: var(--blue-light); color: var(--blue); }
+.badge-orange { background: var(--orange-light); color: var(--orange); }
+.badge-red { background: var(--red-light); color: var(--red); }
+.badge-purple { background: var(--purple-light); color: var(--purple); }
+
+/* ALERT */
+.alert { border-radius: var(--radius); padding: 14px 20px; margin-bottom: 14px; border-left: 4px solid; font-size: 17px; }
+.alert-info { background: var(--blue-light); border-color: var(--blue); }
+.alert-success { background: var(--green-light); border-color: var(--green); }
+.alert-warning { background: var(--orange-light); border-color: var(--orange); }
+.alert-tip { background: #F3E8FF; border-color: var(--purple); }
+
+/* RULE CARDS */
+.rule { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 8px; }
+.rule-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.rule-title { font-weight: 700; font-size: 18px; margin-bottom: 4px; }
+.rule-desc { font-size: 17px; color: var(--text-light); line-height: 1.8; }
+
+/* CHANNEL */
+.channel { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+.channel:last-child { border-bottom: none; }
+.channel-name { font-weight: 600; color: var(--blue); font-size: 17px; text-decoration: none; font-family: monospace; }
+.channel-name:hover { text-decoration: underline; }
+.channel-desc { font-size: 17px; color: var(--text-light); }
+.channel-badge { font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 8px; }
+
+/* MEETING */
+.meeting { display: grid; grid-template-columns: 240px 1fr; align-items: center; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+.meeting:last-child { border-bottom: none; }
+.meeting-time { font-size: 16px; font-weight: 700; color: var(--text-light); text-align: right; }
+.meeting-name { font-weight: 600; font-size: 18px; }
+.meeting-link { font-size: 16px; color: var(--blue); text-decoration: none; }
+.meeting-link:hover { text-decoration: underline; }
+
+/* STEPS */
+.steps { counter-reset: step; }
+.step { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.step:last-child { border-bottom: none; }
+.step-num { background: var(--primary); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.step-content { font-size: 17px; }
+.step-title { font-weight: 700; font-size: 18px; margin-bottom: 6px; }
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 28px 20px; }
+  .hero h1 { font-size: 22px; }
+  .hero-top { flex-direction: column; }
+}
+@media (max-width: 500px) {
+  .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+
+
+<!-- HERO -->
+<nav class="top-nav">
+  <a href="#" class="nav-brand">🛠️ GSO APAC</a>
+  <a href="#playbook" class="nav-link">📖 Playbook</a>
+  <a href="#team" class="nav-link">👥 Team</a>
+  <a href="#meetings" class="nav-link">📅 Meetings</a>
+  <a href="#metrics" class="nav-link">🎯 Metrics</a>
+  <a href="#reports" class="nav-link">📊 Reports</a>
+  <a href="#bestpractices" class="nav-link">✅ Day-to-Day</a>
+  <a href="#workflows" class="nav-link">🔧 Workflows</a>
+  <a href="#dispatch" class="nav-link">🚚 3P Dispatch</a>
+  <a href="#booking" class="nav-link">🔧 3P Booking</a>
+  <a href="#gantt" class="nav-link">📅 GANTT</a>
+  <a href="#dsrstatus" class="nav-link">📋 DSR Status</a>
+  <a href="#channels" class="nav-link">💬 Slack</a>
+  <a href="#resources" class="nav-link">🔗 Resources</a>
+  <a href="#ladder" class="nav-link">📊 Career Ladder</a>
+  <a href="#career" class="nav-link">🚀 Career</a>
+</nav>
+<div class="hero">
+  <div class="hero-top">
+    <div class="hero-text">
+      <h1>GSO APAC Team Hub 🛠️</h1>
+      <p>Your one-stop home for everything you need to get Square sellers live — fast. Australia &amp; Japan.</p>
+      <div style="display: flex; align-items: center; gap: 24px; margin-top: 18px; flex-wrap: wrap; justify-content: center;">
+        <span style="display: flex; align-items: center; gap: 7px; font-size: 14px; opacity: 0.75; font-weight: 500;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Last updated: April 2026
+        </span>
+        <span style="display: flex; align-items: center; gap: 7px; font-size: 14px; opacity: 0.75; font-weight: 500;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          APAC GSO Team · AU &amp; Japan
+        </span>
+        <span style="display: flex; align-items: center; gap: 7px; font-size: 14px; opacity: 0.75; font-weight: 500;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          15 sections · 20+ resources
+        </span>
+      </div>
+    </div>
+    <div class="hero-badge">🎯 Target: Go Live in 10 Business Days</div>
+  </div>
+  <div class="quick-links">
+    <a href="https://go.sqprod.co/gsoplaybook" target="_blank" class="quick-link">📖 GSO Playbook <span style="opacity:0.6; font-size:10px;">↗</span></a>
+    <a href="https://block.highspot.com/spots/65f48504600a2afb55ca7650?list=all&overview=false" target="_blank" class="quick-link">⭐ Highspot</a>
+    <a href="https://square.cloud.looker.com/dashboards/37487?Close+Date=6+month" target="_blank" class="quick-link">📊 AU Dashboard</a>
+    <a href="https://squareinc.lightning.force.com/lightning/o/Deal_Support_Request__c/list?filterName=AU_GSO_Global_Seller_Onboarding_Queue" target="_blank" class="quick-link">📋 AU Queue</a>
+    <a href="https://dashboard.blaze.today/folder/1423l56rIigLw4NiH7fh" target="_blank" class="quick-link">⚡ TextBlaze AU</a>
+    <a href="https://gso-scheduling-guide-2736046192934091.aws.databricksapps.com/" target="_blank" class="quick-link">📅 Scheduling Guide</a>
+    <a href="https://docs.google.com/spreadsheets/d/1e0O4NnysPvYFtyQ9g6hQ5ieFI8xKVIjzJ_lPIUAu6sA/edit" target="_blank" class="quick-link">🏖️ go/gsopto</a>
+    <a href="https://docs.google.com/document/d/1IKbA68JwH84WMAdSLitTrLfwe7cgHy8e3fHsrBH_Dss/edit" target="_blank" class="quick-link">📏 go/gsoroe</a>
+    <a href="https://drive.google.com/drive/folders/0AE9f7qp1nwTFUk9PVA" target="_blank" class="quick-link">📁 AU Drive</a>
+    <a href="https://www.figma.com/board/BMhpADbz40zab61z5yBfct/AU-GSO-Processes" target="_blank" class="quick-link">🗂️ AU FigJam</a>
+  </div>
+</div>
+
+<div class="container">
+
+
+
+  <!-- PLAYBOOK -->
+  <section class="section" id="playbook">
+    <div class="alert alert-info" style="font-size: 17px; padding: 16px 20px;">
+      📖 <strong>go/gsoplaybook</strong> — Your comprehensive role guide. <a href="https://go.sqprod.co/gsoplaybook" target="_blank" style="color: var(--blue); font-weight: 700;">Bookmark it now →</a>
+    </div>
+  </section>
+
+  <section class="section" id="team">
+    <div class="section-title">👥 APAC GSO Team</div>
+    <div class="card">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+
+        <!-- AU Header -->
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px; padding-bottom: 12px; border-bottom: 2px solid var(--blue-light);">
+          <span style="font-size: 22px;">🇦🇺</span>
+          <div style="font-weight: 700; font-size: 17px; color: var(--primary);">Australia</div>
+        </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--blue-light);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--blue); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">KS</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 600; font-size: 16px;">Kamilla Schou Warr</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
+            </div>
+            <span style="background: var(--blue); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 12px; white-space: nowrap;">TEAM LEAD</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--orange-light);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--orange); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">MF</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 600; font-size: 16px;">Meri Fakraufon</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Brisbane</div>
+            </div>
+            <span style="background: var(--orange); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 12px; white-space: nowrap;">VENDOR MGR</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">KB</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 600; font-size: 16px;">Kristian Bojsen-Moller</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">MC</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 600; font-size: 16px;">Macarena Castillo</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">CB</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 600; font-size: 16px;">Chandreyee Bose</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">JS</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 600; font-size: 16px;">Josh Stoffels</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">BC</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 600; font-size: 16px;">Bradley Curtis</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--green-light);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--green); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">GS</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 600; font-size: 16px;">Giacinta Squires</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Melbourne</div>
+            </div>
+            <span style="background: var(--green); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 12px; white-space: nowrap;">STARTS 18 MAY</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">BB</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 600; font-size: 16px;">Ben Braun</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Sydney</div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">JM</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 600; font-size: 16px;">Jamahl</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Canberra</div>
+            </div>
+          </div>
+
+        <!-- JP Header -->
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 16px; margin-bottom: 4px; padding-bottom: 12px; border-bottom: 2px solid var(--red-light);">
+          <span style="font-size: 22px;">🇯🇵</span>
+          <div style="font-weight: 700; font-size: 17px; color: var(--primary);">Japan</div>
+        </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">TK</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 600; font-size: 16px;">Takao Kinjo</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Tokyo</div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">MA</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 600; font-size: 16px;">Misho Arai</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Tokyo</div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 8px; background: var(--bg);">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">MH</div>
+            <div style="flex: 1;">
+              <div style="font-weight: 600; font-size: 16px; font-family: monospace;">maryh@squareup.com</div>
+              <div style="font-size: 16px; color: var(--text-light);">📍 Tokyo</div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="meetings">
+    <div class="section-title">📅 APAC Meetings &amp; Recurring Syncs</div>
+    <div class="card">
+      <div class="meeting">
+        <div class="meeting-time">🇦🇺 Mon 9:00–9:20am AEDT</div>
+        <div>
+          <div class="meeting-name">APAC Monday Standup</div>
+          <div style="font-size: 16px; color: var(--text-light);">Weekly team standup — weekly kickoff and alignment</div>
+        </div>
+      </div>
+      <div class="meeting">
+        <div class="meeting-time">🇦🇺 Biweekly Fri 9:00–9:45am AEDT</div>
+        <div>
+          <div class="meeting-name">APAC Team Meeting</div>
+          <div style="font-size: 16px; color: var(--text-light);">
+            <a href="https://docs.google.com/document/d/13WBHjJRp0TFOxfaC8XMOmjiLmI9CafFLTj8Ee9Qu8ro/edit" target="_blank" class="meeting-link">Agenda &amp; Roster Doc</a> ·
+            <a href="https://docs.google.com/presentation/d/1Z0X5r_s_5jVRODiuS81WlTup3MbvLFAsRn7HbQZ4Bq8/edit" target="_blank" class="meeting-link">Slide deck template</a> ·
+            <a href="https://drive.google.com/drive/folders/1UNlTA0y_WPVolLgxCxe-8JpEs9s9B1k6" target="_blank" class="meeting-link">Meeting folder</a>
+          </div>
+        </div>
+      </div>
+      <div class="meeting">
+        <div class="meeting-time">📊 Quarterly</div>
+        <div>
+          <div class="meeting-name">GSO All Hands</div>
+          <div style="font-size: 16px; color: var(--text-light);">Global GSO quarterly update</div>
+        </div>
+      </div>
+      <div class="alert alert-info" style="margin-top: 12px;">📌 <strong>Hosting a team meeting?</strong> Share slide deck + recording with the team and ensure both are added to the Roster doc after each session.</div>
+    </div>
+  </section>
+
+  <section class="section" id="metrics">
+    <div class="section-title">🎯 Your North Star Metrics</div>
+    <div class="grid grid-4">
+      <div class="metric">
+        <div class="metric-num">10</div>
+        <div class="metric-label">Business Days to Go-Live</div>
+        <div class="metric-sub">Premium & Onsite target (KOC to live)</div>
+      </div>
+      <div class="metric blue">
+        <div class="metric-num">20</div>
+        <div class="metric-label">Calls Per Week (avg)</div>
+        <div class="metric-sub">Daily volume will vary — this is the expectation</div>
+      </div>
+      <div class="metric orange">
+        <div class="metric-num">4/5</div>
+        <div class="metric-label">CSAT Goal</div>
+        <div class="metric-sub">Post-completion seller satisfaction target</div>
+      </div>
+      <div class="metric purple">
+        <div class="metric-num">85%+</div>
+        <div class="metric-label">QA Transcript Score</div>
+        <div class="metric-sub">Scored against standardised rubric per call</div>
+      </div>
+    </div>
+    <div class="alert alert-info" style="margin-top: 14px;">
+      📈 We use <strong>4 metrics</strong> — each assessed individually: <strong>Full-Service DSRs Completed</strong> · <strong>Points Worked</strong> · <strong>Median Days to Complete</strong> · <strong>CSAT</strong>. All goals are grounded in historical data and reviewed by your lead in 1:1s.
+    </div>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; align-items: stretch;">
+      <a href="https://blockcell.sqprod.co/sites/gso-rep-dashboard/" target="_blank" class="quick-link" style="display: inline-flex; background: var(--blue-light); border-color: var(--blue); color: var(--blue); font-size: 14px; padding: 10px 16px;">🧑‍💻 GSO Rep Dashboard</a>
+      <div style="flex: 1; min-width: 260px; background: var(--orange-light); border: 1px solid var(--orange); border-radius: 8px; padding: 10px 16px; display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 18px;">⏱️</span>
+        <div style="font-size: 16px; color: var(--text);"><strong>Reminder:</strong> If the next step is further than <strong>7 days</strong> in the future, please place the DSR <strong>on hold</strong>.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORTS & DASHBOARDS -->
+  <section class="section" id="reports">
+    <div class="section-title" style="margin-top: 8px;">📊 Reports &amp; Dashboards</div>
+<div class="grid grid-3">
+  <a href="https://squareinc.lightning.force.com/lightning/o/Deal_Support_Request__c/list?filterName=AU_GSO_Global_Seller_Onboarding_Queue" target="_blank" class="resource-link">
+    <span class="resource-icon">📋</span>
+    <div><div class="resource-name">AU GSO Queue (Salesforce)</div><div class="resource-desc">All active AU + Strat DSRs</div></div>
+  </a>
+  <a href="https://square.cloud.looker.com/dashboards/37487?Close+Date=6+month" target="_blank" class="resource-link">
+    <span class="resource-icon">📊</span>
+    <div><div class="resource-name">AU GSO Stats</div><div class="resource-desc">AU performance stats — last 6 months</div></div>
+  </a>
+  <a href="https://square.cloud.looker.com/dashboards/36143?Implementation+Specialist=Kristian+Bojsen-Moller%2CMacarena+Castillo%2CBen+Braun%2CChandreyee+Bose%2CJosh+stoffels%2CJamahl+G%2CTakao+Kinjo%2CMisho+Arai%2CMary+Hirata+McJilton" target="_blank" class="resource-link">
+    <span class="resource-icon">🌏</span>
+    <div><div class="resource-name">APAC GSO Dashboard</div><div class="resource-desc">APAC-wide view (AU + JP) — full team filter</div></div>
+  </a>
+  <a href="https://square.cloud.looker.com/dashboards/39926?Sales+Team+Inferred=&Full+Name=&Date+Quarter=this+quarter&Direct+Lead=-Mo+Abuhamdeh%2C-Allison+Fujikawa-Yamamoto%2C-Ashley+Burgart" target="_blank" class="resource-link">
+    <span class="resource-icon">🎯</span>
+    <div><div class="resource-name">go/gsogoaling</div><div class="resource-desc">Quarterly goals dashboard (current quarter)</div></div>
+  </a>
+  <a href="https://squareinc.lightning.force.com/lightning/r/Report/00O4W0000080Ff3UAE/view" target="_blank" class="resource-link">
+    <span class="resource-icon">🔄</span>
+    <div><div class="resource-name">APAC Active DSRs</div><div class="resource-desc">In-flight work including BPO tasks</div></div>
+  </a>
+  <a href="https://square.cloud.looker.com/dashboards/35569" target="_blank" class="resource-link">
+    <span class="resource-icon">🌐</span>
+    <div><div class="resource-name">GSO Org Overview V2</div><div class="resource-desc">Global org-level metrics</div></div>
+  </a>
+  <a href="https://square.cloud.looker.com/dashboards/36319" target="_blank" class="resource-link">
+    <span class="resource-icon">⚙️</span>
+    <div><div class="resource-name">BPO Tracking</div><div class="resource-desc">Task submission and completion tracking</div></div>
+  </a>
+</div>
+  </section>
+
+  <section class="section" id="bestpractices">
+    <div class="section-title">✅ How to Succeed Day-to-Day</div>
+
+    <div class="tab-bar" id="bp-tabs">
+      <button class="tab-btn active" onclick="switchTab('bp', 'outreach', this)">📬 Seller Outreach</button>
+      <button class="tab-btn" onclick="switchTab('bp', 'dsr', this)">📋 DSR Admin</button>
+      <button class="tab-btn" onclick="switchTab('bp', 'latecalls', this)">⏰ Late to Calls</button>
+      <button class="tab-btn" onclick="switchTab('bp', 'ai', this)">🤖 AI Tools</button>
+    </div>
+
+    <div id="bp-outreach" class="tab-pane active">
+      <div class="rule">
+        <span class="rule-icon">📩</span>
+        <div>
+          <div class="rule-title">Introduction email sent by AE/AM upon project assignment</div>
+          <div class="rule-desc">Once you've been assigned to a project, the AE/AM will send the intro email. Change the DSR status from <strong>Assigned → Seller Outreach Complete</strong> when you see the email in your inbox.</div>
+        </div>
+      </div>
+      <div class="rule">
+        <span class="rule-icon">🔁</span>
+        <div>
+          <div class="rule-title">3×3 Outreach Rule — then close</div>
+          <div class="rule-desc">Attempt contact 3 times, every 3 days. On the 4th email, notify seller of training request cancellation. <strong>If KOC is not booked within 12 days of intro (intro + 3×3 days reminders), mark DSR as LOST</strong> and communicate to AE.<br><br>⚠️ <strong>Ensure you let the AE know every time you send a follow-up email to the seller</strong> — either by tagging them in Chatter or leaving a comment in the deal Slack channel.</div>
+        </div>
+      </div>
+      <div class="rule">
+        <span class="rule-icon">📅</span>
+        <div>
+          <div class="rule-title">Contact every 3 business days once in-implementation</div>
+          <div class="rule-desc">Keep momentum and flag blockers early. If a seller is not ready to proceed, reject the DSR and tell the AE to resubmit when ready.</div>
+        </div>
+      </div>
+      <div class="rule">
+        <span class="rule-icon">⚡</span>
+        <div>
+          <div class="rule-title">24-hour email response SLA (while in implementation)</div>
+          <div class="rule-desc">Even "I'll get back to you soon" is fine — sellers must not be left in the dark. Once handed over to AE/CS/AM, refer inquiries accordingly.</div>
+        </div>
+      </div>
+      <div class="rule">
+        <span class="rule-icon">📆</span>
+        <div>
+          <div class="rule-title">Book ALL training sessions during the KOC using the <a href="https://gso-scheduling-2736046192934091.aws.databricksapps.com/" target="_blank" style="color: var(--blue);">GANTT chart</a></div>
+          <div class="rule-desc">Schedule: Dashboard Training → Menu Review (if needed) → SO Training → POS/App Training → Final Q&A. Align all dates to the seller's desired go-live date and list them in the KOC recap email.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="bp-dsr" class="tab-pane">
+      <div class="card" style="margin-bottom: 16px; border-left: 4px solid var(--blue); background: var(--blue-light);">
+        <div style="font-weight: 700; font-size: 17px; margin-bottom: 12px; color: var(--primary);">📋 After Every Virtual Training Session — Required Steps</div>
+        <div style="font-size: 16px; color: var(--text-light); margin-bottom: 16px;">Complete all three steps after <strong>every</strong> virtual training session. These are expected of your role and stated in the GSO Playbook.</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 50%; background: var(--blue); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">1</div>
+            <div style="font-size: 16px; line-height: 1.7;">Find notes in the DSA from the completed virtual training (or closeout form from Site Survey/Installation) and <strong>add notes in Chatter and tag the AE</strong>, or post in the designated Slack channel.</div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 50%; background: var(--blue); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">2</div>
+            <div style="font-size: 16px; line-height: 1.7;">Find the <a href="https://revenue.io" target="_blank" style="color: var(--blue); font-weight: 600;">Revenue.io</a> call and run through your preferred AI bot to create <strong>post-call action items + post-call email</strong>. Add action items in Chatter and/or Slack and send a follow-up email to your seller. <strong>⚠️ You must send an email to the seller after EACH touchpoint</strong> with follow-up and check-in.</div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 50%; background: var(--blue); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">3</div>
+            <div style="font-size: 16px; line-height: 1.7;"><strong>Update the DSR on the same day</strong> with: <span style="background: white; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin: 0 2px;">Next Steps</span> <span style="background: white; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin: 0 2px;">Next Step Date</span> <span style="background: white; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin: 0 2px;">Status</span> <span style="background: white; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin: 0 2px;">Seller Desired Go Live Date</span> (every time it changes).</div>
+          </div>
+        </div>
+        <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(0,82,204,0.2); font-size: 15px; color: var(--blue);">
+          📖 All of the above is stated in the <strong>GSO Playbook</strong> and is expected of your role.
+        </div>
+      </div>
+      <div class="rule">
+        <span class="rule-icon">📝</span>
+        <div>
+          <div class="rule-title">After every seller interaction: update the DSR</div>
+          <div class="rule-desc">Update: <strong>Next Steps</strong> · <strong>Next Step Date</strong> · <strong>Status</strong> · <strong>Seller Desired Go Live Date</strong> (every time it changes). Do this on the same day.</div>
+        </div>
+      </div>
+      <div class="rule">
+        <span class="rule-icon">💬</span>
+        <div>
+          <div class="rule-title">Chatter AE/AM after every call</div>
+          <div class="rule-desc">Tag AE with: call summary, go-live date, action items. Flag any missing hardware, incompatible printers, or blockers immediately. Link the Revenue.io recording in Chatter. Use AI tools to draft quickly.</div>
+        </div>
+      </div>
+      <div class="rule">
+        <span class="rule-icon">🎯</span>
+        <div>
+          <div class="rule-title">Always have a next step booked — no exceptions</div>
+          <div class="rule-desc">If no next step can be booked, explain why in Chatter and set a reminder date. This is non-negotiable for clean pipeline management.</div>
+        </div>
+      </div>
+      <div class="rule">
+        <span class="rule-icon">⏱️</span>
+        <div>
+          <div class="rule-title">Log a DSA for every seller interaction</div>
+          <div class="rule-desc">Every training call, task, and milestone must be logged in a Deal Support Activity on the same day it happens. Every call = a DSA.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="bp-latecalls" class="tab-pane">
+      <div class="card">
+        <table class="tbl">
+          <thead>
+            <tr><th>Time Past Start</th><th>What To Do</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-orange">+5 mins</span></td>
+              <td>Call the seller via <strong>Revenue.io</strong></td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-orange">+10 mins</span></td>
+              <td>Call again via Revenue.io <strong>and send an email</strong> saying you'll stay until 15 mins past</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-red">+15 mins</span></td>
+              <td>Leave the Google Meet. <strong>Chatter the AE</strong> immediately to let them know the seller no-showed.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="alert alert-warning" style="margin-top: 12px;">
+          ⚠️ <strong>Don't ask AEs to call on your behalf.</strong> You can ping them and let them know (they can try) — but they may be busy, so you own this.
+        </div>
+      </div>
+    </div>
+
+    <div id="bp-ai" class="tab-pane">
+      <div class="grid grid-2">
+        <div class="rule">
+          <span class="rule-icon">🤖</span>
+          <div>
+            <div class="rule-title">Revenue.io / Gong — Call transcripts</div>
+            <div class="rule-desc">Use to generate Chatter notes, seller recap emails, and action item summaries. Link recording in Chatter + seller recap email.</div>
+          </div>
+        </div>
+        <div class="rule">
+          <span class="rule-icon">💬</span>
+          <div>
+            <div class="rule-title">ChatGPT — GSO Admin Support GPT</div>
+            <div class="rule-desc">Use the <a href="https://chatgpt.com/g/g-67ffb5477f9c8191b49dc2e7ef05063e-gso-post-call-administrative-support" target="_blank" style="color: var(--blue);">GSO Post-Call Admin GPT</a> for quick post-call summaries, follow-up emails, SFDC notes. Also use ChatGPT Projects as a living wiki per seller.</div>
+          </div>
+        </div>
+        <div class="rule">
+          <span class="rule-icon">⚡</span>
+          <div>
+            <div class="rule-title">TextBlaze — Seller email templates</div>
+            <div class="rule-desc"><a href="https://dashboard.blaze.today/folder/1423l56rIigLw4NiH7fh" target="_blank" style="color: var(--blue);">AU Snippets folder</a> · <a href="https://dashboard.blaze.today/folder/gCrunuWpFK6rGvI7yxkp" target="_blank" style="color: var(--blue);">JP Snippets</a>. Use for all seller emails, KOC recap, chatter notes. Ask @Kristian Bojsen-Moller for AU folder access if needed.</div>
+          </div>
+        </div>
+        <div class="rule">
+          <span class="rule-icon">🦆</span>
+          <div>
+            <div class="rule-title">Goose — Data clean-up &amp; BPO prep</div>
+            <div class="rule-desc">Run menu files and seller notes through Goose to get concise, clear BPO instructions. Better instructions = faster, more accurate builds.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="workflows">
+    <div class="section-title">🔧 Workflows</div>
+    <div class="tab-bar" id="wf-tabs">
+      <button class="tab-btn active" onclick="switchTab('wf', 'premium', this)">⭐ Premium</button>
+      <button class="tab-btn" onclick="switchTab('wf', 'tasks', this)">📝 Task Services</button>
+      <button class="tab-btn" onclick="switchTab('wf', 'onsite', this)">🏗️ Onsite</button>
+      <button class="tab-btn" onclick="switchTab('wf', 'opti', this)">⚡ Optimization</button>
+      <button class="tab-btn" onclick="switchTab('wf', 'billing', this)">💳 Billing</button>
+    </div>
+
+    <div id="wf-premium" class="tab-pane active">
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Introduction email sent by AE/AM upon project assignment</div>Once you've been assigned to a project, the AE/AM will send the intro email. Change the DSR status from <strong>Assigned → Seller Outreach Complete</strong> when you see the email in your inbox.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Pre-KOC: Account analysis</div>Review merchant profile &amp; menu, check hardware (new vs. reused), ID compatibility issues, start building implementation timeline. Submit menu to BPO ASAP if possible.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Kickoff Call (30 mins)</div>Confirm hardware, network reliability, service style, go-live date. Book ALL future sessions via the <a href="https://gso-scheduling-2736046192934091.aws.databricksapps.com/" target="_blank" style="color: var(--blue);">GANTT chart</a>. Cover: Dashboard → Menu Review → SO → POS/App → Q&amp;A. Camera always on. <strong>All virtual trainings are completed by 3P</strong> — except the final Q&amp;A, which is completed by you.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Post-KOC (same day)</div>Send KOC recap email with all booked sessions and action items. Submit tasks to BPO if you haven't done this before the kick off call (preferred for all projects). Create DSA. Update DSR status → <em>Kick Off Call Complete</em>. Chatter AE with go-live date and blockers.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Active training phase</div>QA BPO work before each call. Dashboard Training (90min) → Menu Review (45min, optional) → SO Training (60min) → POS/App Training (60min). Create DSA after each. Update DSR status after each session.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-content"><div class="step-title">Go-Live → Handoff</div>Send go-live congratulations email (TextBlaze <code>/goodbye</code>), cc AE/AM. Q&amp;A must be completed within 7 days of last training. After 1-week support window: update to <em>Implementation Complete</em> and send final email.</div></div>
+      </div>
+    </div>
+
+    <div id="wf-tasks" class="tab-pane">
+      <div class="alert alert-info">All tasks (menu builds, migrations, MILO, etc.) are submitted to BPO via a BPO Activity DSA. Do not do these yourself unless complexity or time constraints require it.</div>
+      <table class="tbl">
+        <thead><tr><th>Task Type</th><th>TextBlaze Snippet</th><th>SLA</th><th>Key Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>F&amp;B Menu Build</strong></td><td><code>.buildrst</code> / <code>.buildspos</code></td><td>3–4 biz days</td><td>Check catalog for existing items. Get seller approval to overwrite. Attach ALL menu files to DSA.</td></tr>
+          <tr><td><strong>RTL Inventory</strong></td><td><code>.buildretail</code></td><td>3–4 biz days</td><td>Verify subscriptions enrolled first. Multi-location: match files to each location.</td></tr>
+          <tr><td><strong>MILO (catalog copy)</strong></td><td><code>/milo</code></td><td>3–4 biz days</td><td>Can't copy SO pages, restaurant grids, or team members. Specify original MT + new MT clearly.</td></tr>
+          <tr><td><strong>Customer Migration</strong></td><td>BPO Activity</td><td>3–4 biz days</td><td>Include source file + clear instructions.</td></tr>
+          <tr><td><strong>Gift Card Migration</strong></td><td><code>/gc</code></td><td>3–4 biz days</td><td>Max 10,000 cards per batch. No Visa/Mastercard. SQ→SQ: use Regulator directly.</td></tr>
+          <tr><td><strong>Loyalty Migration</strong></td><td>BPO Activity</td><td>3–4 biz days</td><td>Phone or email based only. Seller must have active Loyalty subscription + rewards configured.</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-tip" style="margin-top: 12px;">💜 <strong>BPO Pro Tip:</strong> The quality of your submission = the quality of the output. Use clear, specific language. Run files through Goose for cleaner instructions. If a task isn't done by the due date, check in with the BPO rep and post in <a href="https://square.enterprise.slack.com/archives/C038MTJLCH2" style="color: var(--purple);">#gso-bpo</a> with Rush checkbox if urgent.</div>
+    </div>
+
+    <div id="wf-onsite" class="tab-pane">
+      <div class="alert alert-info">Onsite = Premium package process + 3P dispatch for installation and POS training. Follow all Premium steps PLUS the 3P steps below.</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">During KOC — gather onsite info</div>Ask site survey questions (location, network type, mounting needs, current hardware). Pre-book Q&amp;A shortly after installation so you can iron out flow/menu changes. Book during KOC.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Post-KOC — create 3P DSAs via PRM</div>Create DSA for Site Survey + Installation + Staff Training (separate DSAs). Use the <a href="https://gso-scheduling-2736046192934091.aws.databricksapps.com/" target="_blank" style="color: var(--blue);">GANTT chart</a> to book training with Tech Pantry/OWR. Include DSA number in the GANTT booking.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Submit BOTH: Site Survey request AND Installation request</div>Site survey can happen anytime after KOC. Installation must be at least 1 week after the survey (to address action items). Complete all remote trainings and config BEFORE install date.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Create 3P staff/team member profile on seller account</div>Allows partner to review account in advance, reducing dependency on someone with credentials being onsite. Delete the 3P login after install is complete.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Post-install wrap-up</div>Review closeout form in <a href="https://square.enterprise.slack.com/archives/C090AB44W6R" style="color: var(--blue);">#3p-closeout-forms_apac</a>. Handle action items (missing hardware, networking). Upload PDF to DSR. Update DSAs to <em>Appointment Completed</em>. Delete vendor login. Mark DSR <em>Implementation Complete</em> after 1 week live/trained.</div></div>
+      </div>
+      <div class="card" style="margin-top: 12px;">
+        <strong style="font-size: 13px;">🔩 Mounting rules</strong>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; font-size: 12px;">
+          <div style="background: var(--green-light); color: var(--green); padding: 8px 12px; border-radius: 6px;"><strong>✅ Can mount:</strong> Drywall, FRP (notify tech in advance to bring correct tools)</div>
+          <div style="background: var(--red-light); color: var(--red); padding: 8px 12px; border-radius: 6px;"><strong>❌ Cannot mount:</strong> Stainless steel, tile, concrete, brick — seller must hire contractor or use standing mounts</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="wf-opti" class="tab-pane">
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">DSR assigned → verify status is Assigned</div>Read DSR notes thoroughly. Update Next Step Date to the day of the booked call.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">During the call (60 mins)</div>Start with intro, understand business, customise the session to seller's needs (POS, Dashboard, Q&amp;A). All calls via Google Meet, recorded via Revenue.io.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Post-call admin (same day)</div>Update DSR to <em>Implementation Complete</em>. Chatter AE/AM with follow-up notes. Link recording in Chatter so AE can share with seller (accessible 90 days).</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">No-show / cancellation</div>AE/AM owns rescheduling. Notify AE via Chatter. If seller never books within 10 business days of assignment → reject DSR, notify AE. <em>Note: 10-day rule does not apply to AU.</em></div></div>
+      </div>
+    </div>
+
+    <div id="wf-billing" class="tab-pane">
+      <div class="acc-item open">
+        <div class="acc-head" onclick="toggleAcc(this)">Billing by Regulator (Standard)<span class="acc-arrow">▼</span></div>
+        <div class="acc-body">BPO handles billing, pulling reports every Monday &amp; Wednesday to manually bill through the regulator action on the account. For escalations use <strong>#gso-bpo</strong> Slack channel. AUD Regulator account: <a href="https://regulator.sqprod.co/n/users/N5DVWCWRB0C56" target="_blank" style="color: var(--blue);">Link</a></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head" onclick="toggleAcc(this)">Billing by Invoice (manual)<span class="acc-arrow">▼</span></div>
+        <div class="acc-body">Log in to AUD Regulator → Home → Invoices → Create invoice for "Global Seller Onboarding Services" → specify package + price → send to seller's email on file.</div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head" onclick="toggleAcc(this)">Billing via CPQ (Strategic accounts only)<span class="acc-arrow">▼</span></div>
+        <div class="acc-body">All Strategic deals quoted and billed via CPQ (except SFF). All billing managed by AE/AM — no action required from GSO.</div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head" onclick="toggleAcc(this)">Refunds<span class="acc-arrow">▼</span></div>
+        <div class="acc-body">ACH refunds require full refund (issue partial by: full refund → rebill correct amount). Card refunds: log in to AUD AR Regulator → Transactions → initiate refund. Notify AE via Chatter once complete. Escalate via <strong>#subscriptions-help</strong> if issues.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="dispatch">
+    <div class="section-title">🚚 3P Dispatch — Australia</div>
+    <div class="grid grid-2" style="margin-bottom: 16px;">
+      <div class="card" style="border-left: 4px solid var(--green);">
+        <div style="font-weight: 700; font-size: 17px; margin-bottom: 6px;">🛠️ Tech Pantry</div>
+        <div style="font-size: 16px; color: var(--text-light); margin-bottom: 8px;">Best for white glove implementation</div>
+        <div class="badge badge-green" style="margin-bottom: 10px; font-size: 13px; padding: 3px 10px;">$1M+ GPV Sellers</div>
+        <div style="font-size: 16px; margin-bottom: 12px;">1 FTE Melbourne · 1 FTE Sydney</div>
+        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 16px;">
+          <div>💬 Connect: <a href="#" style="color: var(--blue);">#techpantry_square_connect</a></div>
+          <div>📨 Dispatch: <a href="https://square.enterprise.slack.com/archives/C0896AJSF3K" style="color: var(--blue);">#techpantry_square_dispatch_request</a></div>
+          <div>🆘 Onsite help: <a href="https://square.enterprise.slack.com/archives/C088W5GEZQC" style="color: var(--blue);">#techpantry_square_onsite_help</a></div>
+          <div>✅ Reviews: <span style="color: var(--blue);">#techpantry-dispatch-review</span></div>
+          <div>🚀 Hypercare: <span style="color: var(--blue);">#techpantry-gso-portal-launch-hypercare</span></div>
+        </div>
+      </div>
+      <div class="card" style="border-left: 4px solid var(--blue);">
+        <div style="font-weight: 700; font-size: 17px; margin-bottom: 6px;">🌍 One World Rental AU</div>
+        <div style="font-size: 16px; color: var(--text-light); margin-bottom: 8px;">Best for lower GPV sellers</div>
+        <div class="badge badge-blue" style="margin-bottom: 10px; font-size: 13px; padding: 3px 10px;">Sub $1M GPV Sellers</div>
+        <div style="font-size: 16px; margin-bottom: 12px;">Melbourne · Sydney · Adelaide · Brisbane · Perth</div>
+        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 16px;">
+          <div>💬 Connect: <span style="color: var(--blue);">#oneworldrental_au_square_connect</span></div>
+          <div>📨 Dispatch: <a href="https://square.enterprise.slack.com/archives/C08LDUPSE7N" style="color: var(--blue);">#oneworldrental_au_square_dispatch</a></div>
+          <div>🆘 Onsite help: <span style="color: var(--blue);">#oneworldrental_au_square_onsite-help</span></div>
+          <div>✅ Reviews: <span style="color: var(--blue);">#oneworldrentalau-dispatch-review</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="font-weight: 700; margin-bottom: 12px;">PRM Process — New Standard</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">KO Call — create DSA in advance</div>Before the KO call, create the DSA under the DSR. During KO call, use the <a href="https://gso-scheduling-2736046192934091.aws.databricksapps.com/" target="_blank" style="color: var(--blue);">GANTT chart</a> to book training based on seller's preferred dates. Include the DSA number in the GANTT booking. <em style="color: var(--text-light);">Note: soon all DSAs will be auto-created when a DSR is created.</em></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Create DSAs (Installation + Staff Training = 2 separate DSAs)</div>Record Type: 3rd Party Vendor · Partner: Tech Pantry or OWR · Activity Type: Site Survey / Installation / Dashboard Training etc. · Set DSA Owner to partner queue ("Queues" → partner name).</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">DSA Submission → Acceptance / Rejection</div>Accepted: you'll get a Salesforce Chatter notification. Rejected: Slack notification in partner's dispatch-review channel. Coordinate via Slack on counter dates. To re-submit: update Preferred Time in Scheduler tab + change DSA Owner back to partner queue.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Coordination timeline (critical)</div>Site survey: ASAP after KOC. Installation: at least 1 week after survey. Remote trainings + full account config must be <strong>complete before installation day</strong>.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Post-install: closeout forms &amp; wrap-up</div>Check <a href="https://square.enterprise.slack.com/archives/C090AB44W6R" style="color: var(--blue);">#3p-closeout-forms_apac</a> for survey results. Handle action items. Upload PDF to DSR. Delete vendor login. Update DSAs to Appointment Completed. DSR → Implementation Complete after 1 week live/trained.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3P PARTNER BOOKING LINKS -->
+  <section class="section" id="booking">
+    <!-- 3P Booking Links -->
+<div class="section-title" style="font-size:16px; margin-top: 20px;">🔧 3P Partner Booking Links</div>
+<div class="alert alert-warning" style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px;">
+  <span style="font-size: 18px; flex-shrink: 0;">⚠️</span>
+  <div><strong>Heads up:</strong> The team will move to the <strong>GANTT chart by end of April 2026</strong>. ALL team members are expected to utilise the GANTT chart from that point forward. The Freebusy links below are temporary.</div>
+</div>
+<div class="grid grid-3" style="margin-bottom: 16px;">
+  <a href="https://freebusy.io/techpantry-tech-pantry-remote-bookings-page" target="_blank" class="resource-link">
+    <span class="resource-icon">🥐</span>
+    <div><div class="resource-name">Tech Pantry — Freebusy</div><div class="resource-desc">Book Tech Pantry technician via Freebusy</div></div>
+  </a>
+  <a href="https://freebusy.io/oneworldrental-square" target="_blank" class="resource-link">
+    <span class="resource-icon">🌍</span>
+    <div><div class="resource-name">One World Rental — Freebusy</div><div class="resource-desc">Book OWR technician via Freebusy</div></div>
+  </a>
+</div>
+  </section>
+
+  <!-- GANTT SCHEDULING -->
+  <section class="section" id="gantt">
+    <!-- GANTT Admin Guide -->
+<div class="card" style="margin-bottom: 16px;">
+  <div style="font-weight: 700; font-size: 15px; margin-bottom: 4px;">📅 GANTT Scheduling — Links &amp; Guides</div>
+  <div style="font-size: 13px; color: var(--text-light); margin-bottom: 14px;">All GANTT scheduling tools and guides in one place.</div>
+  <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+    <a href="https://gso-scheduling-2736046192934091.aws.databricksapps.com/" target="_blank" class="quick-link" style="background: var(--blue-light); border-color: var(--blue); color: var(--blue);">🗓️ go/gantt — V3 App</a>
+    <a href="https://gso-scheduling-guide-2736046192934091.aws.databricksapps.com/" target="_blank" class="quick-link" style="background: var(--green-light); border-color: var(--green); color: var(--green);">📖 go/ganttguide — GSO Guide</a>
+    <a href="https://gso-scheduling-guide-2736046192934091.aws.databricksapps.com/dispatcher.html" target="_blank" class="quick-link" style="background: var(--purple-light); border-color: var(--purple); color: var(--purple);">🚚 go/ganttdispatch — Partner Dispatcher Guide</a>
+    <a href="https://gso-scheduling-guide-2736046192934091.aws.databricksapps.com/admin.html" target="_blank" class="quick-link" style="background: var(--orange-light); border-color: var(--orange); color: var(--orange);">⚙️ go/ganttadmin — Admin Guide</a>
+  </div>
+</div>
+  </section>
+
+    <!-- DSR STATUS -->
+  <section class="section" id="dsrstatus">
+    <div class="section-title">📋 DSR Status Guide</div>
+    <div class="alert alert-info" style="margin-bottom: 18px;">Each status reflects a specific stage in the seller's onboarding journey. Update the DSR status <strong>on the same day</strong> as each milestone — do not let it fall behind.</div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;">
+    <div>
+    <!-- Active Flow -->
+    <div style="font-weight: 700; font-size: 16px; color: var(--primary); margin-bottom: 12px;">📈 Active Statuses — In Order <span style="font-weight: 400; font-size: 14px; color: var(--text-light); margin-left: 8px;">Move through these in order · update on the same day as each milestone</span></div>
+    <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 0;">
+
+      <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--blue);">
+        <div style="margin-bottom: 8px;"><span style="background: var(--blue); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Assigned</span></div>
+        <div style="font-size: 16px; line-height: 1.7;">The DSR has been assigned to you. No action needed on the status yet — wait for the AE/AM intro email before moving forward.</div>
+      </div>
+
+      <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--blue);">
+        <div style="margin-bottom: 8px;"><span style="background: var(--blue); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Seller Outreach Complete</span></div>
+        <div style="font-size: 16px; line-height: 1.7;">The intro email from AE/AM has been sent to the seller. Update to this status as soon as you see the email in your inbox.</div>
+      </div>
+
+      <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--green);">
+        <div style="margin-bottom: 8px;"><span style="background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Kick Off Call Complete</span></div>
+        <div style="font-size: 16px; line-height: 1.7;">The Kickoff Call has been completed, a desired Go Live Date has been set, and there is full alignment on next steps.</div>
+      </div>
+
+      <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--green);">
+        <div style="margin-bottom: 8px;"><span style="background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Task in Progress</span></div>
+        <div style="font-size: 16px; line-height: 1.7;">A task has been submitted to BPO and is being worked on — e.g. menu build, migration, or MILO.</div>
+      </div>
+
+      <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--green);">
+        <div style="margin-bottom: 8px;"><span style="background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Dashboard Training Complete</span></div>
+        <div style="font-size: 16px; line-height: 1.7;">The seller has completed their Dashboard Training session with the 3P partner.</div>
+      </div>
+
+      <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--green);">
+        <div style="margin-bottom: 8px;"><span style="background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">App Training Complete</span></div>
+        <div style="font-size: 16px; line-height: 1.7;">The seller has completed their POS / App Training session with the 3P partner.</div>
+      </div>
+
+      <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--green);">
+        <div style="margin-bottom: 8px;"><span style="background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">SO Training Complete</span></div>
+        <div style="font-size: 16px; line-height: 1.7;">The seller has completed their Square Online (SO) Training session with the 3P partner.</div>
+      </div>
+
+      <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--purple);">
+        <div style="margin-bottom: 8px;"><span style="background: var(--purple); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Training Complete — Post Implementation</span></div>
+        <div style="font-size: 16px; line-height: 1.7;">All purchased seller training has been completed. This begins their <strong>one-week post-support period</strong> for an optional 1-hour Q&amp;A / post go-live session.</div>
+      </div>
+
+    </div>
+
+    </div><!-- end active col -->
+    <div>
+    <!-- Hold / Lost / Rejected -->
+    <div style="font-weight: 700; font-size: 16px; color: var(--primary); margin-bottom: 12px;">⚠️ Hold, Lost &amp; Rejected <span style="font-weight: 400; font-size: 14px; color: var(--text-light); margin-left: 8px;">Use when a seller is paused, disengaged, or the DSR can no longer proceed</span></div>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+
+      <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--orange);">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+          <span style="background: var(--orange); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">On Hold</span>
+        </div>
+        <div style="font-size: 16px; line-height: 1.6; margin-bottom: 10px;">If the seller's training is postponed (construction delays, target date more than 3 weeks out, etc.) move the DSR to On Hold until the seller is ready to resume. <strong>Do not place a seller On Hold if you are actively working with them.</strong> The main reason to use On Hold is if your next step is not scheduled or unknown.</div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--text-light); margin-bottom: 8px;">Sub-statuses for On Hold — use the closest fit:</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+          <span style="background: var(--orange-light); color: var(--orange); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 12px; border: 1px solid var(--orange);">Product Blocker</span>
+          <span style="background: var(--orange-light); color: var(--orange); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 12px; border: 1px solid var(--orange);">Seller Non-Responsive</span>
+          <span style="background: var(--orange-light); color: var(--orange); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 12px; border: 1px solid var(--orange);">Seller Pushed Go-Live Date</span>
+          <span style="background: var(--orange-light); color: var(--orange); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 12px; border: 1px solid var(--orange);">Site/Premise Work Needed</span>
+          <span style="background: var(--orange-light); color: var(--orange); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 12px; border: 1px solid var(--orange);">Waiting on AE</span>
+        </div>
+      </div>
+
+      <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--red);">
+        <div style="margin-bottom: 8px;"><span style="background: var(--red); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Lost — No Seller Contact</span></div>
+        <div style="font-size: 16px; line-height: 1.7;">No response after multiple outreach attempts <strong>and</strong> 30 days in On Hold status. If you trained the seller, place in <strong>Implementation Complete</strong> instead. Do not mark Lost if you completed training.</div>
+      </div>
+
+      <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--red);">
+        <div style="margin-bottom: 8px;"><span style="background: var(--red); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Lost — Churn</span></div>
+        <div style="font-size: 16px; line-height: 1.7;">The seller has disengaged or abandoned the process. Do not mark the seller live if you completed any training for them.</div>
+      </div>
+
+      <div style="padding: 14px 16px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--red);">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+          <span style="background: var(--red); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">Rejected</span>
+        </div>
+        <div style="font-size: 16px; line-height: 1.6; margin-bottom: 10px;">The DSR is rejected due to incorrect escalation, lack of seller engagement, incorrect information, or the seller is not looking to kick off in the next 2–4 weeks. Use the proper sub-status when rejecting — use your best judgement for the closest fit.</div>
+      </div>
+
+    </div><!-- end hold col -->
+    </div><!-- end two-col grid -->
+
+    <!-- Implementation Complete — full width -->
+    <div style="padding: 18px 20px; background: var(--green-light); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--green); margin-top: 8px;">
+      <div style="margin-bottom: 8px;"><span style="background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px;">✅ Implementation Complete</span></div>
+      <div style="font-size: 16px; line-height: 1.7;">Once the one-week post-implementation support ends, the Onboarding Specialist sends the <strong>"Final Email"</strong> (cc'ing AE/AM). This status applies to both Active and any closed-out Hold/Lost scenarios where training was completed.</div>
+    </div>
+
+  </section>
+
+  <section class="section" id="channels">
+    <div class="section-title">💬 Key Slack Channels</div>
+
+    <div class="tab-bar" id="ch-tabs">
+      <button class="tab-btn active" onclick="switchTab('ch', 'apac', this)">🌏 APAC Core</button>
+      <button class="tab-btn" onclick="switchTab('ch', 'dispatch', this)">🚚 AU 3P Dispatch</button>
+      <button class="tab-btn" onclick="switchTab('ch', 'global', this)">🌐 Global GSO</button>
+      <button class="tab-btn" onclick="switchTab('ch', 'email', this)">✉️ Email Groups</button>
+    </div>
+
+    <div id="ch-apac" class="tab-pane active">
+      <div class="card">
+        <div class="channel">
+          <div><a href="https://square.enterprise.slack.com/archives/C07N6ESH23F" class="channel-name">#apac-global-smooth-operators</a><div class="channel-desc">Internal APAC team channel — reminders, announcements, team updates</div></div>
+        </div>
+        <div class="channel">
+          <div><a href="https://square.enterprise.slack.com/archives/C01S922JDJR" class="channel-name">#au-gso</a><div class="channel-desc">External channel — SAMPS, GSO, AEs &amp; AMs (AU). Main cross-functional channel.</div></div>
+        </div>
+        <div class="channel">
+          <div><a href="https://square.enterprise.slack.com/archives/C03V7D25HR6" class="channel-name">#au-gso-samps</a><div class="channel-desc">Internal channel to strategise with the AU SAMPS team</div></div>
+        </div>
+        <div class="channel">
+          <div><span class="channel-name">#jp-gso-escalations</span><div class="channel-desc">External channel — JP SAMPS, GSO, AEs &amp; AMs (Japan)</div></div>
+        </div>
+        <div class="channel">
+          <div><a href="https://square.enterprise.slack.com/archives/C090AB44W6R" class="channel-name">#3p-closeout-forms_apac</a><div class="channel-desc">Where site survey results and closeout forms are posted — check after every 3P visit</div></div>
+        </div>
+        <div class="channel">
+          <div><span class="channel-name">#project-satellite</span><div class="channel-desc">Project Satellite channel for APAC team</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="ch-dispatch" class="tab-pane">
+      <div class="card">
+        <div style="font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border);">🔩 Tech Pantry</div>
+        <div class="channel">
+          <div><span class="channel-name">#techpantry_square_connect</span><div class="channel-desc">Main connection channel with the Tech Pantry team</div></div>
+        </div>
+        <div class="channel">
+          <div><a href="https://square.enterprise.slack.com/archives/C0896AJSF3K" class="channel-name">#techpantry_square_dispatch_request</a><div class="channel-desc">Submit dispatch requests for Tech Pantry technicians — $1M+ GPV sellers</div></div>
+        </div>
+        <div class="channel">
+          <div><a href="https://square.enterprise.slack.com/archives/C088W5GEZQC" class="channel-name">#techpantry_square_onsite_help</a><div class="channel-desc">Help channel — Tech Pantry requests GSO support while onsite</div></div>
+        </div>
+        <div class="channel">
+          <div><span class="channel-name">#techpantry-dispatch-review</span><div class="channel-desc">Dispatch request review — acceptance / rejection notifications from Tech Pantry</div></div>
+        </div>
+        <div class="channel" style="margin-bottom: 18px;">
+          <div><span class="channel-name">#techpantry-gso-portal-launch-hypercare</span><div class="channel-desc">Hypercare channel for Tech Pantry portal launch support</div></div>
+        </div>
+
+        <div style="font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border);">🌍 One World Rental AU</div>
+        <div class="channel">
+          <div><span class="channel-name">#oneworldrental_au_square_connect</span><div class="channel-desc">Main connection channel with the One World Rental AU team</div></div>
+        </div>
+        <div class="channel">
+          <div><a href="https://square.enterprise.slack.com/archives/C08LDUPSE7N" class="channel-name">#oneworldrental_au_square_dispatch</a><div class="channel-desc">Submit dispatch requests for OWR technicians — Sub $1M GPV sellers</div></div>
+        </div>
+        <div class="channel">
+          <div><span class="channel-name">#oneworldrental_au_square_onsite-help</span><div class="channel-desc">Help channel — OWR requests GSO support while onsite</div></div>
+        </div>
+        <div class="channel" style="margin-bottom: 18px;">
+          <div><span class="channel-name">#oneworldrentalau-dispatch-review</span><div class="channel-desc">Dispatch request review — acceptance / rejection notifications from OWR</div></div>
+        </div>
+
+        <div style="font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border);">🛠️ General 3P</div>
+        <div class="channel">
+          <div><span class="channel-name">#3p-dispatch-assistance</span><div class="channel-desc">Questions about the 3P dispatch process — request assistance from the coordination team</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="ch-global" class="tab-pane">
+      <div class="card">
+        <div class="channel">
+          <div><a href="https://app.slack.com/client/E01BAFDEXUP/C44GZJG4F" class="channel-name">#global-seller-onboarding-team</a><div class="channel-desc">All GSO team members — reminders, announcements, top-of-minds</div></div>
+        </div>
+        <div class="channel">
+          <div><a href="https://app.slack.com/client/E01BAFDEXUP/C043J8DBTM4" class="channel-name">#global-seller-onboarding</a><div class="channel-desc">Escalation channel — internal Squares asking questions about GSO</div></div>
+        </div>
+        <div class="channel">
+          <div><a href="https://square.enterprise.slack.com/archives/C038MTJLCH2" class="channel-name">#gso-bpo</a><div class="channel-desc">Private — coordinating BPO activities, rush requests, feedback</div></div>
+        </div>
+        <div class="channel">
+          <div><a href="https://square.enterprise.slack.com/archives/C08NAPCAX7S" class="channel-name">#sq-seller-feedback-intake</a><div class="channel-desc">Submit product feature requests — rolls up into go/sqproductdemand tracker</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="ch-email" class="tab-pane">
+      <div class="card">
+        <div style="font-size: 13px; color: var(--text-light); margin-bottom: 16px;">Google Groups used for team communications, distribution lists, and internal access.</div>
+        <div class="channel">
+          <div>
+            <a href="mailto:global-onboarding@squareup.com" class="channel-name" style="font-family: monospace; font-size: 13px;">global-onboarding@squareup.com</a>
+            <div class="channel-desc">Team group for all GSO team members and leadership</div>
+          </div>
+        </div>
+        <div class="channel">
+          <div>
+            <span class="channel-name" style="font-family: monospace; font-size: 13px;">apac-gso</span>
+            <div class="channel-desc">Market-specific internal group for AU and Japan</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="section" id="resources">
+    <div class="section-title">🔗 Key Resources</div>
+
+
+
+    <div class="grid grid-3" style="margin-bottom: 16px;">
+      <a href="https://block.highspot.com/items/657b2c13ffbb1d90dd96c2c8?lfrm=srp.0#1" target="_blank" class="resource-link">
+        <span class="resource-icon">💰</span>
+        <div><div class="resource-name">go/gsopackages</div><div class="resource-desc">AU Packages & Pricing guide</div></div>
+      </a>
+      <a href="https://docs.google.com/document/d/155UPc-AuUDo21Ydrnart_bZJcUd4DJxgE88dSBuYVoI/edit" target="_blank" class="resource-link">
+        <span class="resource-icon">🆕</span>
+        <div><div class="resource-name">New Prices & Packaging (AU)</div><div class="resource-desc">Latest pricing for Sales</div></div>
+      </a>
+      <a href="https://block.highspot.com/items/6824195f121dc3378446699d" target="_blank" class="resource-link">
+        <span class="resource-icon">🏗️</span>
+        <div><div class="resource-name">go/auonsites</div><div class="resource-desc">AU Onsite overview & process</div></div>
+      </a>
+      <a href="https://docs.google.com/document/d/1dAInZbN6Y0uxwefCFlMEHxzmsY2kh44j7cUUstrRArA/edit?tab=t.0#heading=h.umkh5sytlqah" target="_blank" class="resource-link">
+        <span class="resource-icon">🚚</span>
+        <div><div class="resource-name">go/au3pdispatch</div><div class="resource-desc">AU Partner Dispatch & DSA Scheduling Guide</div></div>
+      </a>
+      <a href="https://www.google.com/maps/d/viewer?ll=-35.94277964343204%2C146.2896470918629&z=5&mid=1hfmw2eNJnO9GMjibGSD2FvIAB44Hs8s" target="_blank" class="resource-link">
+        <span class="resource-icon">🗺️</span>
+        <div><div class="resource-name">3P Technician Map</div><div class="resource-desc">Find nearest tech by location</div></div>
+      </a>
+      <a href="https://docs.google.com/presentation/d/1NCS3qVbYtlxkXOlN7SSr5cbc-dlVXEdMQRZAiYebnm4/edit" target="_blank" class="resource-link">
+        <span class="resource-icon">🏪</span>
+        <div><div class="resource-name">go/fsau</div><div class="resource-desc">Franchise Suite — process, best practices & limitations</div></div>
+      </a>
+      <a href="https://docs.google.com/document/d/1irZCx2L_7E9oIse2m58xyANOBRx2nMS9ISMjtW-TOSU/edit" target="_blank" class="resource-link">
+        <span class="resource-icon">⚖️</span>
+        <div><div class="resource-name">go/stratpmroe</div><div class="resource-desc">Strategic PM rules of engagement</div></div>
+      </a>
+      <a href="https://docs.google.com/document/d/1_kgUP5iLF0VRHYQ8HL6d9sUtoexpoYbQ_s1SlSYjS8Y/edit" target="_blank" class="resource-link">
+        <span class="resource-icon">🎫</span>
+        <div><div class="resource-name">go/orderticketsau</div><div class="resource-desc">Order tickets (AU)</div></div>
+      </a>
+      <a href="https://g2.stage.sqprod.co/apps/sq-product-demand-tracker" target="_blank" class="resource-link">
+        <span class="resource-icon">📣</span>
+        <div><div class="resource-name">Square Product Demand Tracker</div><div class="resource-desc">Submit and track product feature requests</div></div>
+      </a>
+      <a href="https://blockcell.sqprod.co/sites/gso-onboarding-guide-bradley-curtis/" target="_blank" class="resource-link">
+        <span class="resource-icon">👋</span>
+        <div><div class="resource-name">New Hire Onboarding Guide</div><div class="resource-desc">Template for new reps (updated Apr 2026)</div></div>
+      </a>
+      <a href="https://blockcell.sqprod.co/sites/upmarket-pm-resources/" target="_blank" class="resource-link">
+        <span class="resource-icon">🏆</span>
+        <div><div class="resource-name">PM Resource Hub & Upmarket Seller Strategy</div><div class="resource-desc">Resources and strategy for upmarket PM implementations</div></div>
+      </a>
+      <a href="https://mise-menu.fly.dev/login" target="_blank" class="resource-link">
+        <span class="resource-icon">🍽️</span>
+        <div><div class="resource-name">go/mise</div><div class="resource-desc">Menu tool · Password: <code style="background: var(--bg); padding: 1px 5px; border-radius: 4px; font-size: 11px;">misesquare2026!</code></div></div>
+      </a>
+      <a href="https://my.sqprod.co/search" target="_blank" class="resource-link">
+        <span class="resource-icon">🔍</span>
+        <div><div class="resource-name">go/glean</div><div class="resource-desc">Internal search across all Square knowledge</div></div>
+      </a>
+      <a href="https://drive.google.com/drive/folders/0AE9f7qp1nwTFUk9PVA" target="_blank" class="resource-link">
+        <span class="resource-icon">📁</span>
+        <div><div class="resource-name">Shared AU Team Folder</div><div class="resource-desc">Shared Google Drive folder for AU team docs</div></div>
+      </a>
+      <a href="https://blockcell.sqprod.co/sites/partnerships-hub/#marketman" target="_blank" class="resource-link">
+        <span class="resource-icon">🤝</span>
+        <div><div class="resource-name">Partnership Hub</div><div class="resource-desc">Partner resources, MarketMan & integrations</div></div>
+      </a>
+      <a href="https://docs.google.com/presentation/d/1qxQEHK_f1NrFshu_HUd4ZNX9iJJi0XmkGVZ47BVQ47E/edit?slide=id.g389a5d78803_0_59#slide=id.g389a5d78803_0_59" target="_blank" class="resource-link">
+        <span class="resource-icon">📞</span>
+        <div><div class="resource-name">Kick-off Call Guide</div><div class="resource-desc">KOC slide deck by Jamahl · <span onclick="event.preventDefault(); event.stopPropagation(); window.open('https://drive.google.com/drive/folders/1myYqJ7P93DIarlJ33WvJrE0ZS9DXsHxH','_blank');" style="color: var(--blue); cursor: pointer; text-decoration: underline;">All KOC decks folder →</span></div></div>
+      </a>
+      <a href="https://drive.google.com/drive/folders/1UNlTA0y_WPVolLgxCxe-8JpEs9s9B1k6?usp=drive_link" target="_blank" class="resource-link">
+        <span class="resource-icon">📽️</span>
+        <div><div class="resource-name">Team Meeting Decks</div><div class="resource-desc">All team meeting slide decks in one folder</div></div>
+      </a>
+      <a href="https://blockcell.sqprod.co/sites/gso-rep-dashboard/" target="_blank" class="resource-link">
+        <span class="resource-icon">🧑‍💻</span>
+        <div><div class="resource-name">GSO Rep Dashboard</div><div class="resource-desc">Your individual rep performance view</div></div>
+      </a>
+      <a href="https://docs.google.com/document/d/1WD7mnaUj0tG3XYm296wMxx1U4igGXUju1lTzLXDHoTc/edit?tab=t.0#heading=h.ui5yxgrth5ud" target="_blank" class="resource-link">
+        <span class="resource-icon">🤖</span>
+        <div><div class="resource-name">AI Tool Guide for Beginners</div><div class="resource-desc">Getting started with AI tools at Square</div></div>
+      </a>
+      <a href="https://go.sqprod.co/gsoplaybook" target="_blank" class="resource-link">
+        <span class="resource-icon">📖</span>
+        <div><div class="resource-name">GSO Playbook</div><div class="resource-desc">Your comprehensive role guide — bookmark it</div></div>
+      </a>
+      <a href="https://block.highspot.com/spots/65f48504600a2afb55ca7650?list=all&overview=false" target="_blank" class="resource-link">
+        <span class="resource-icon">⭐</span>
+        <div><div class="resource-name">Highspot</div><div class="resource-desc">APAC GSO Highspot spot — all sales & onboarding content</div></div>
+      </a>
+      <a href="https://dashboard.blaze.today/folder/1423l56rIigLw4NiH7fh" target="_blank" class="resource-link">
+        <span class="resource-icon">⚡</span>
+        <div><div class="resource-name">TextBlaze AU</div><div class="resource-desc">AU email snippets folder — seller emails, KOC recap, chatter notes</div></div>
+      </a>
+      <a href="https://gso-scheduling-guide-2736046192934091.aws.databricksapps.com/" target="_blank" class="resource-link">
+        <span class="resource-icon">📅</span>
+        <div><div class="resource-name">Scheduling Guide</div><div class="resource-desc">GSO scheduling reference guide</div></div>
+      </a>
+      <a href="https://docs.google.com/spreadsheets/d/1e0O4NnysPvYFtyQ9g6hQ5ieFI8xKVIjzJ_lPIUAu6sA/edit" target="_blank" class="resource-link">
+        <span class="resource-icon">🏖️</span>
+        <div><div class="resource-name">go/gsopto</div><div class="resource-desc">GSO PTO tracker — team leave and availability</div></div>
+      </a>
+      <a href="https://docs.google.com/document/d/1IKbA68JwH84WMAdSLitTrLfwe7cgHy8e3fHsrBH_Dss/edit" target="_blank" class="resource-link">
+        <span class="resource-icon">📏</span>
+        <div><div class="resource-name">go/gsoroe</div><div class="resource-desc">GSO rules of engagement</div></div>
+      </a>
+      <a href="https://www.figma.com/board/BMhpADbz40zab61z5yBfct/AU-GSO-Processes" target="_blank" class="resource-link">
+        <span class="resource-icon">🗂️</span>
+        <div><div class="resource-name">AU FigJam</div><div class="resource-desc">AU GSO process board — visual workflows and process maps</div></div>
+      </a>
+    </div>
+
+  </section>
+
+  <!-- CAREER LADDER -->
+  <section class="section" id="ladder">
+    <div class="section-title">📊 GSO/TPM Career Ladder</div>
+    <div class="card" style="margin-top: 14px;">
+      <div style="font-weight: 700; margin-bottom: 10px;">📊 GSO/TPM Career Ladder</div>
+      <div style="font-size: 16px; color: var(--text-light); margin-bottom: 12px;">Defines the path for growth within GSO — experience, scope, and key responsibilities at each Square level. Talk to your lead about your level-specific targets and career goals in your 1:1s.</div>
+      <a href="https://docs.google.com/spreadsheets/d/1dFIWJ8ci-2V_hDIhquAyBcwr9g2MFCkQHQKZDPVUF2s/edit?gid=136062247" target="_blank" class="quick-link" style="display: inline-flex; background: var(--blue-light); border-color: var(--blue); color: var(--blue);">📋 View GSO Career Ladder</a>
+    </div>
+  </section>
+
+  <section class="section" id="career">
+    <div class="section-title">🚀 Career Growth</div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div style="font-size: 22px; margin-bottom: 8px;">🔄</div>
+        <div style="font-weight: 700; font-size: 17px; margin-bottom: 4px;">Performance Reviews</div>
+        <div style="font-size: 16px; color: var(--text-light); margin-bottom: 10px;">Biannual in <strong>July &amp; January</strong> via Loop. Evaluates Impact, Behavior &amp; Betterment.</div>
+        <a href="https://my.sqprod.co/performance/kamilla/home" target="_blank" style="color: var(--blue); font-size: 12px; font-weight: 600;">go/loop →</a>
+      </div>
+      <div class="card">
+        <div style="font-size: 22px; margin-bottom: 8px;">⬆️</div>
+        <div style="font-weight: 700; font-size: 17px; margin-bottom: 4px;">Promotions</div>
+        <div style="font-size: 16px; color: var(--text-light); margin-bottom: 10px;">Biannual: <strong>Q1 &amp; Q3</strong>. Revenue Org only. Based on sustained performance + business needs.</div>
+        <a href="https://my.sqprod.co/resources/promotions-at-block" target="_blank" style="color: var(--blue); font-size: 12px; font-weight: 600;">go/promotions →</a>
+      </div>
+      <div class="card">
+        <div style="font-size: 22px; margin-bottom: 8px;">💰</div>
+        <div style="font-weight: 700; font-size: 17px; margin-bottom: 4px;">Compensation</div>
+        <div style="font-size: 16px; color: var(--text-light); margin-bottom: 10px;">Annual review cycle. Pay equity benchmarked against industry standards.</div>
+        <a href="https://my.sqprod.co/resources/compensation" target="_blank" style="color: var(--blue); font-size: 12px; font-weight: 600;">go/compensation →</a>
+      </div>
+    </div>
+
+
+  </section>
+
+
+
+  <div style="text-align: center; color: var(--text-light); font-size: 12px; padding: 20px 0 32px; border-top: 1px solid var(--border);">
+    GSO APAC Team Hub · Last updated April 2026 · Questions? Ping <strong>Kamilla</strong> in <a href="https://square.enterprise.slack.com/archives/C07N6ESH23F" style="color: var(--blue);">#apac-global-smooth-operators</a>
+  </div>
+
+</div>
+
+<script>
+function switchTab(group, id, btn) {
+  document.querySelectorAll('[id^="' + group + '-"]').forEach(p => p.classList.remove('active'));
+  document.getElementById(group + '-' + id).classList.add('active');
+  btn.closest('.tab-bar').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function toggleAcc(head) {
+  head.parentElement.classList.toggle('open');
+}
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+</body>
+</html>
